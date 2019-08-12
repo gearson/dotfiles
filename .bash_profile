@@ -21,7 +21,7 @@ fi
 
 # wr evaluates to the absolute path to your Windows user's root.
 
-export wr=~/../../mnt/c/Users/Deniz/
+export wr=~/../../mnt/c/Users/Deniz.Dohmen/
 
 
 # This gives us a quick way of moving directly to the Windows root
