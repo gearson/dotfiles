@@ -20,9 +20,11 @@ fi
 
 
 # wr evaluates to the absolute path to your Windows user's root.
-
-export wr=~/../../mnt/c/Users/Deniz.Dohmen/
-
+if [ "$HOSTNAME" = "NB19009" ];  then
+    export wr=~/../../mnt/c/Users/Deniz.Dohmen/
+elif [ "$HOSTNAME" = "Deniz" ]; then
+    export wr=~/../../mnt/c/Users/Deniz/
+fi
 
 # This gives us a quick way of moving directly to the Windows root
 
