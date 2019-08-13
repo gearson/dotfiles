@@ -1,12 +1,12 @@
-set nocompatible
-
+set nocompatible  " be iMproved
+filetype off      " required
 set noswapfile
+set nowritebackup
+set nobackup
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
 set runtimepath^=~/.vim/bundle/vim-airline/plugin/airline.vim
 
-filetype off
 
 "=================================================================
 
@@ -15,35 +15,23 @@ filetype off
 "=================================================================
 
 set visualbell  " diable error bell
-
 set encoding=utf-8
-
 set modelines=0
-
 set lines=50
-
 set columns=120
-
-set title 
+set title
 
 set omnifunc=syntaxcomplete#Complete
-
 syntax on
-
 set smartindent
 
 set shiftwidth=4
-
 set tabstop=4
-
 set softtabstop=4
-
 set expandtab
-
 set textwidth=79
 
 set number
-
 set cursorline 
 
 set ruler  " Display line and column number in bottom ruler.
@@ -68,8 +56,6 @@ set noshowmode
 
 set showcmd
 
-set noswapfile
-
 
 " Move up/down editor lines
 
@@ -77,12 +63,9 @@ nnoremap j gj
 
 nnoremap k gk
 
-
 set hidden " Allow hidden buffers
 
 set ttyfast " Rendering
-
-
 
 "==== Searching
 
@@ -110,8 +93,8 @@ set t_Co=256
 "let g:solarized_termtrans=1
 
 
-"set background=dark
-
+set background=dark
+"colorscheme dracula
 
 "=========================================================
 
@@ -212,7 +195,6 @@ colorscheme dracula
 
 let g:ctrlp_working_path_mode = 'r' 
 
-
 let g:airline_theme='dracula'  "or solarized
 
 let g:airline#extensions#tabline#enabled = 0 
@@ -230,7 +212,6 @@ let g:airline_section_y = ''
 let g:airline_section_x = '' 
 
 
-
 " Nerd Tree toggling
 
 map <C-b> :NERDTreeToggle<CR>
@@ -246,7 +227,11 @@ map <C-b> :NERDTreeToggle<CR>
 
 let g:pymode_python = 'python3'
 
+let g:pymode_lint = 0
+
 let g:pymode_breakpoint = 1
+
+let g:pymode_syntax = 1
 
 let g:pymode_breakpoint_bind = '<leader>b'
 
@@ -263,9 +248,16 @@ let g:pymode_options_max_line_length = 79
 let g:pymode_options_colorcolumn = 1
 
 
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " autoquit if only nerdtree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " autoquit if only nerdtree is open
 
 
 " :let pythonthreedll = 'C:\Users\Deniz.Dohmen\AppData\Local\Programs\Python\Python37-32\Scripts\python36.dll'
 
 ":let pythonthreedll = 'C:\Users\Deniz\AppData\Local\Programs\Python\Python36-32\python36.dll'
+
+
+"===========
+" more Stuff
+"===========
+set pastetoggle=<F2>
+set clipboard=unnamed
