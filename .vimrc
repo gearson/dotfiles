@@ -1,7 +1,7 @@
 set nocompatible  " be iMproved
 filetype off      " required
 
-set timeoutlen=1000
+set timeoutlen=1000  "to disable the lag when pressing esc
 set ttimeoutlen=5
 
 set noswapfile
@@ -14,10 +14,85 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/bundle/vim-airline/plugin/airline.vim
 
 
+"==========================================================
+" vundle stuff
+"==========================================================
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'dracula/vim'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'python-mode/python-mode'
+
+
+" All of your Plugins must be added before the following line
+
+call vundle#end()            " required
+
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+
+"filetype plugin on
+
+" Brief help
+
+" :PluginList       - lists configured plugins
+
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
+
+"===========================================================
+" Some Plugin Configs
+"===========================================================
+
+colorscheme dracula
+
+let g:ctrlp_working_path_mode = 'r' 
+
+let g:airline_theme='dracula'  "or solarized
+
+let g:airline#extensions#tabline#enabled = 0 
+
+let g:airline#extensions#branch#enabled = 1 
+
+let g:airline_left_sep = '|'
+
+let g:airline_right_sep = '|'
+
+let g:airline_section_warning = '' 
+
+let g:airline_section_y = '' 
+
+let g:airline_section_x = '' 
+
+"let g:airline_powerline_fonts = 1
+
+
+map <C-b> :NERDTreeToggle<CR>  " Nerd Tree toggling
+
+
 "=================================================================
-
 " Formatting and personal preferences
-
 "=================================================================
 
 set visualbell  " diable error bell
@@ -64,16 +139,15 @@ set showcmd
 
 
 " Move up/down editor lines
-
 nnoremap j gj
-
 nnoremap k gk
 
 set hidden " Allow hidden buffers
-
 set ttyfast " Rendering
 
-"==== Searching
+"==== 
+"Searhing
+"==== 
 
 nnoremap / /\v
 
@@ -92,29 +166,26 @@ set showmatch
 
 "===== Color scheme (terminal)
 
-set t_Co=256
+"set t_Co=256
 
 "let g:solarized_termcolors=256
 
 "let g:solarized_termtrans=1
 
-
 set background=dark
-"colorscheme dracula
+
 
 "=========================================================
-
 "Mappings 
-
 "=========================================================
 
 " Remap Help key
 
-"inoremap <F1> <ESC>:set invfullscreen<CR>a
+inoremap <F1> <ESC>:set invfullscreen<CR>a
 
-"nnoremap <F1> :set invfullscreen<CR>
+nnoremap <F1> :set invfullscreen<CR>
 
-"vnoremap <F1> :set invfullscreen<CR>
+vnoremap <F1> :set invfullscreen<CR>
 
 
 "split navigations
@@ -130,107 +201,14 @@ nnoremap <C-H> <C-W><C-H>
 
 " move between buffers
 
-"map <C-Left> <Esc>:bprev<CR>
+map <C-Left> <Esc>:bprev<CR>
 
-"map <C-Right> <Esc>:bnext<CR>
-
-
-"==========================================================
-
-" vundle stuff
-
-"==========================================================
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'dracula/vim'
-
-Plugin 'scrooloose/nerdtree'
-
-Plugin 'vim-airline/vim-airline'
-
-Plugin 'vim-airline/vim-airline-themes'
-
-Plugin 'tpope/vim-fugitive'
-
-Plugin 'kien/ctrlp.vim'
-
-Plugin 'python-mode/python-mode'
-
-
-" All of your Plugins must be added before the following line
-
-call vundle#end()            " required
-
-filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-
-"filetype plugin on
-
-"
-
-" Brief help
-
-" :PluginList       - lists configured plugins
-
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-
-"
-
-" see :h vundle for more details or wiki for FAQ
-
-" Put your non-Plugin stuff after this line
-colorscheme dracula
-
-"===========================================================
-
-" Some Plugin Configs
-
-"===========================================================
-
-
-let g:ctrlp_working_path_mode = 'r' 
-
-let g:airline_theme='dracula'  "or solarized
-
-let g:airline#extensions#tabline#enabled = 0 
-
-let g:airline#extensions#branch#enabled = 1 
-
-let g:airline_left_sep = '|'
-
-let g:airline_right_sep = '|'
-
-let g:airline_section_warning = '' 
-
-let g:airline_section_y = '' 
-
-let g:airline_section_x = '' 
-
-"let g:airline_powerline_fonts = 1
-
-" Nerd Tree toggling
-
-map <C-b> :NERDTreeToggle<CR>
-
+map <C-Right> <Esc>:bnext<CR>
 
 
 "==========================================
-
 "Python Stuff
-
 "==========================================
-
 
 let g:pymode_python = 'python3'
 
@@ -256,11 +234,6 @@ let g:pymode_options_colorcolumn = 1
 
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " autoquit if only nerdtree is open
-
-
-" :let pythonthreedll = 'C:\Users\Deniz.Dohmen\AppData\Local\Programs\Python\Python37-32\Scripts\python36.dll'
-
-":let pythonthreedll = 'C:\Users\Deniz\AppData\Local\Programs\Python\Python36-32\python36.dll'
 
 
 "===========
