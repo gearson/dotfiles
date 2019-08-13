@@ -3,6 +3,8 @@ filetype off      " required
 set noswapfile
 set nowritebackup
 set nobackup
+set lazyredraw  "might make vim faster
+set regexpengine=1  "might make vim faster
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/bundle/vim-airline/plugin/airline.vim
