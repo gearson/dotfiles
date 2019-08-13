@@ -1,5 +1,9 @@
 set nocompatible  " be iMproved
 filetype off      " required
+
+set timeoutlen=1000
+set ttimeoutlen=5
+
 set noswapfile
 set nowritebackup
 set nobackup
@@ -106,11 +110,11 @@ set background=dark
 
 " Remap Help key
 
-inoremap <F1> <ESC>:set invfullscreen<CR>a
+"inoremap <F1> <ESC>:set invfullscreen<CR>a
 
-nnoremap <F1> :set invfullscreen<CR>
+"nnoremap <F1> :set invfullscreen<CR>
 
-vnoremap <F1> :set invfullscreen<CR>
+"vnoremap <F1> :set invfullscreen<CR>
 
 
 "split navigations
@@ -126,9 +130,9 @@ nnoremap <C-H> <C-W><C-H>
 
 " move between buffers
 
-map <C-Left> <Esc>:bprev<CR>
+"map <C-Left> <Esc>:bprev<CR>
 
-map <C-Right> <Esc>:bnext<CR>
+"map <C-Right> <Esc>:bnext<CR>
 
 
 "==========================================================
@@ -203,9 +207,9 @@ let g:airline#extensions#tabline#enabled = 0
 
 let g:airline#extensions#branch#enabled = 1 
 
-let g:airline_left_sep = ' | '
+let g:airline_left_sep = '|'
 
-let g:airline_right_sep = ' ||  '
+let g:airline_right_sep = '|'
 
 let g:airline_section_warning = '' 
 
@@ -213,6 +217,7 @@ let g:airline_section_y = ''
 
 let g:airline_section_x = '' 
 
+"let g:airline_powerline_fonts = 1
 
 " Nerd Tree toggling
 
