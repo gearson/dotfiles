@@ -11,7 +11,7 @@ set lazyredraw  "might make vim faster
 set regexpengine=1  "might make vim faster
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set runtimepath^=~/.vim/bundle/vim-airline/plugin/airline.vim
+"set runtimepath^=~/.vim/bundle/vim-airline/plugin/airline.vim
 
 
 "==========================================================
@@ -25,13 +25,13 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'dracula/vim'
+"Plugin 'dracula/vim'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline'
 
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'tpope/vim-fugitive'
 
@@ -65,25 +65,25 @@ filetype plugin indent on    " required
 " Some Plugin Configs
 "===========================================================
 
-colorscheme dracula
+"colorscheme dracula
 
 let g:ctrlp_working_path_mode = 'r' 
 
-let g:airline_theme='dracula'  "or solarized
+"let g:airline_theme='dracula'  "or solarized
 
-let g:airline#extensions#tabline#enabled = 0 
+"let g:airline#extensions#tabline#enabled = 0 
 
-let g:airline#extensions#branch#enabled = 1 
+"let g:airline#extensions#branch#enabled = 1 
 
-let g:airline_left_sep = '|'
+"let g:airline_left_sep = '|'
 
-let g:airline_right_sep = '|'
+"let g:airline_right_sep = '|'
 
-let g:airline_section_warning = '' 
+"let g:airline_section_warning = '' 
 
-let g:airline_section_y = '' 
+"let g:airline_section_y = '' 
 
-let g:airline_section_x = '' 
+"let g:airline_section_x = '' 
 
 "let g:airline_powerline_fonts = 1
 
@@ -172,7 +172,7 @@ set showmatch
 
 "let g:solarized_termtrans=1
 
-set background=dark
+"set background=dark
 
 
 "=========================================================
