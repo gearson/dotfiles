@@ -8,12 +8,24 @@ alias cdwr="cd ~/../../mnt/c/Users/Deniz/"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/gearson/.oh-my-zsh"
 
+eval `dircolors ~/.dircolors`
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+#POWERLEVEL9K_MODE='nerdfont-complete'
+plugins=(virtualenv)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv user dir vcs)
+
+
+
+source $ZSH/oh-my-zsh.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
