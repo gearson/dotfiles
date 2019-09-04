@@ -1,3 +1,6 @@
+# disable error bell
+set bell-style none
+
 # ignore case while completing
 set completion-ignore-case on
 
