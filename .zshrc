@@ -9,6 +9,7 @@ alias cdwr="cd ~/../../mnt/c/Users/Deniz.Dohmen/"
 export ZSH="/home/gearson/.oh-my-zsh"
 
 eval `dircolors ~/.dircolors`
+
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 #POWERLEVEL9K_MODE='nerdfont-complete'
@@ -18,9 +19,7 @@ POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv user dir vcs)
 
 
-
 source $ZSH/oh-my-zsh.sh
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
