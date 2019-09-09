@@ -13,7 +13,7 @@ eval `dircolors ~/.dircolors`
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 #POWERLEVEL9K_MODE='nerdfont-complete'
-plugins=(virtualenv)
+plugins=(virtualenv git)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv user dir vcs)
@@ -86,10 +86,6 @@ alias nethack='~/nh/install/games/nethack'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
