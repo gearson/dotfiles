@@ -17,7 +17,7 @@ alias nethack='~/nh/install/games/nethack'
 # Path to your oh-my-zsh installation.
 export ZSH="/home/gearson/.oh-my-zsh"
 
-eval `dircolors ~/.dircolors`
+eval `dircolors ~/dotfiles/.dircolors`
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
