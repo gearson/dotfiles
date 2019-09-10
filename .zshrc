@@ -1,6 +1,6 @@
 # Aliases
-alias cdwr="cd ~/../../mnt/c/Users/Deniz/"
-#alias cdwr="cd ~/../../mnt/c/Users/Deniz.Dohmen/"
+#alias cdwr="cd ~/../../mnt/c/Users/Deniz/"
+alias cdwr="cd ~/../../mnt/c/Users/Deniz.Dohmen/"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
