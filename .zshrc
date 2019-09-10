@@ -19,8 +19,8 @@ export ZSH="/home/gearson/.oh-my-zsh"
 
 eval `dircolors ~/dotfiles/.dircolors`
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 #POWERLEVEL9K_MODE='nerdfont-complete'
 #POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
