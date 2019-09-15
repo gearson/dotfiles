@@ -30,7 +30,6 @@ fi
 
 alias cdwr='cd "$wr"'
 
-
 # This brings you to your Windows Working directory immediatly when you open a new terminal.
 
 cdwr
