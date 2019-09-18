@@ -46,6 +46,8 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'python-mode/python-mode'
 
+Plugin 'mhinz/vim-startify'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 
