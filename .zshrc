@@ -11,6 +11,9 @@ alias de="deactivate"
 
 alias nethack='~/nh/install/games/nethack'
 
+alias trf='tree -v -L'
+alias trd='tree -d -L'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
