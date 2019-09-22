@@ -1,3 +1,6 @@
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+
 set nocompatible  " be iMproved
 
 filetype off      " required
@@ -191,11 +194,10 @@ set showmatch
 
 "===== Color scheme (terminal)
 
-"set t_Co=256
+set t_Co=256
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans=1
 "set background=dark
-
 "=========================================================
 "Mappings 
 "=========================================================

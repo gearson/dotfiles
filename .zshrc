@@ -3,8 +3,8 @@ export TERM="xterm-256color"
 # Aliases
 # ##########
 
-#alias cdwr="cd ~/../../mnt/c/Users/Deniz/"
-alias cdwr="cd ~/../../mnt/c/Users/Deniz.Dohmen/"
+alias cdwr="cd ~/../../mnt/c/Users/Deniz/"
+#alias cdwr="cd ~/../../mnt/c/Users/Deniz.Dohmen/"
 
 alias ae="deactivate &> /dev/null; source ./venv/bin/activate"
 alias de="deactivate"
