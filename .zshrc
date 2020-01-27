@@ -1,13 +1,15 @@
-export TERM="xterm-256color"
 ############
 # Aliases
 # ##########
 
-alias cdwr="cd ~/../../mnt/c/Users/Deniz/"
-#alias cdwr="cd ~/../../mnt/c/Users/Deniz.Dohmen/"
+#alias cdwr="cd ~/../../mnt/c/Users/Deniz/"
+alias cdwr="cd ~/../../mnt/c/Users/Deniz.Dohmen/"
 
 alias ae="deactivate &> /dev/null; source ./venv/bin/activate"
 alias de="deactivate"
+alias sdenv="source ~/dotfiles/.env && set -a && source ~/dotfiles/.env && set +a"
+
+
 
 alias nethack='~/nh/install/games/nethack'
 
@@ -24,6 +26,7 @@ eval `dircolors ~/dotfiles/.dircolors`
 
 #ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="robbyrussell"
 #POWERLEVEL9K_MODE='nerdfont-complete'
 #POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
