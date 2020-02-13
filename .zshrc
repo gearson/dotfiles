@@ -11,9 +11,6 @@ alias de="deactivate"
 
 alias nethack='~/nh/install/games/nethack'
 
-alias trf='tree -v -L'
-alias trd='tree -d -L'
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -23,17 +20,19 @@ export ZSH="/home/gearson/.oh-my-zsh"
 eval `dircolors ~/dotfiles/.dircolors`
 
 #ZSH_THEME="powerlevel9k/powerlevel9k"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
+
 #POWERLEVEL9K_MODE='nerdfont-complete'
 #POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-plugins=(virtualenv git)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
+#plugins=(virtualenv git)
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_DISABLE_RPROMPT=true
+#POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+#POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv user dir vcs)
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv user dir vcs)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -55,15 +54,6 @@ source $ZSH/oh-my-zsh.sh
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
