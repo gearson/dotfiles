@@ -1,8 +1,0 @@
-OPTIONS=catname:Cornelius
-OPTIONS=autopickup:false
-OPTIONS=name:Ruben
-OPTIONS=pettype:cat
-OPTIONS=hitpointbar:true
-OPTIONS=windowtype:curses
-OPTIONS=perm_invent
-
