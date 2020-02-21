@@ -2,8 +2,8 @@
 " http://vim.fisadev.com
 " version: 12.0.0
 
-" To use fancy symbols wherever possible, change this setting from 0 to 1
-" and use a font from https://github.com/ryanoasis/nerd-fonts in your terminal 
+""  To use fancy symbols wherever possible, change this setting from 0 to 1
+""  and use a font from https://github.com/ryanoasis/nerd-fonts in your terminal 
 " (if you aren't using one of those fonts, you will see funny characters here. 
 " Turst me, they look nice when using one of those fonts).
 " Create a function to open a neovim terminal in a small split window and run python 
@@ -22,7 +22,13 @@ set encoding=utf-8
 let using_neovim = has('nvim')
 let using_vim = !using_neovim
 
-" ============================================================================
+command! -nargs=1 Ngrep vimgrep "<args>" ~/Documents/notes/**/*.md
+nnoremap <leader>f :Ngrep
+nnoremap <leader>[ :cprev <CR>
+nnoremap <leader>] :cnext <CR>
+
+let g:dracula_colorterm=0
+
 " Vim-plug initialization
 " Avoid modifying this section, unless you are very sure of what you are doing
 
@@ -105,6 +111,12 @@ Plug 'Shougo/context_filetype.vim'
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
+Plug 'deoplete-plugins/deoplete-jedi'
+" Completion from other opened files
+Plug 'Shougo/context_filetype.vim'
+" Just to add the python go-to-definition and similar features, autocompletion
+" from this plugin is disabled
+Plug 'davidhalter/jedi-vim'
 " Automatically close parenthesis, etc
 Plug 'Townk/vim-autoclose'
 " Surround
@@ -139,7 +151,7 @@ Plug 'neomake/neomake'
 " (disabled by default because is very intrusive and can't be easily toggled
 " on/off. When the plugin is present, will always activate the relative
 " numbering every time you go to normal mode. Author refuses to add a setting
-" to avoid that)
+"i to avoid that)
 Plug 'myusuf3/numbers.vim'
 " Nice icons in the file explorer and file type status line.
 Plug 'ryanoasis/vim-devicons'
@@ -168,50 +180,6 @@ if vim_plug_just_installed
 endif
 
 " ============================================================================
-" Vim settings and mappings
-" You can edit them as you wish
-let g:dracula_colorterm = 0
-
-if using_vim
-    " A bunch of things that are set by default in neovim, but not in vim
-
-    " no vi-compatible
-    set nocompatible
-
-    " allow plugins by file type (required for plugins!)
-    filetype plugin on
-    filetype indent on
-
-    " always show status bar
-    set ls=2
-
-    " incremental search
-    set incsearch
-    " highlighted search results
-    set hlsearch
-
-    " syntax highlight on
-    syntax on
-
-    " better backup, swap and undos storage for vim (nvim has nice ones by
-    " default)
-    set directory=~/.vim/dirs/tmp     " directory to place swap files in
-    set backup                        " make backup files
-    set backupdir=~/.vim/dirs/backups " where to put backup files
-    set undofile                      " persistent undos - undo after you re-open the file
-    set undodir=~/.vim/dirs/undos
-    set viminfo+=n~/.vim/dirs/viminfo
-    " create needed directories if they don't exist
-    if !isdirectory(&backupdir)
-        call mkdir(&backupdir, "p")
-    endif
-    if !isdirectory(&directory)
-        call mkdir(&directory, "p")
-    endif
-    if !isdirectory(&undodir)
-        call mkdir(&undodir, "p")
-    endif
-end
 
 " tabs and spaces handling
 set expandtab
@@ -259,15 +227,26 @@ imap <M-Left> <ESC>:tabp<CR>
 
 "split navigations
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
+""nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+
+" move single lines
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+vnoremap <C-j> :m '>+1<CR>gv==gv
+vnoremap <C-k> :m '<-2<CR>gv==gv
+
 
 " move between buffers
 
 map <C-Left> <Esc>:bprev<CR>
-
 map <C-Right> <Esc>:bnext<CR>
 
 " when scrolling, keep cursor 3 lines away from screen border
@@ -462,11 +441,6 @@ if fancy_symbols_enabled
     let g:airline_left_sep = ''
     let g:airline_left_alt_sep = ''
     let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = '⭠'
-    let g:airline_symbols.readonly = '⭤'
-    let g:airline_symbols.linenr = '⭡'
-else
     let g:webdevicons_enable = 0
 endif
 
