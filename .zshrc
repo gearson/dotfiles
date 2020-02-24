@@ -17,7 +17,15 @@ eval `dircolors ~/dotfiles/.dircolors`
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# make sure my theme exists in .oh-my-zsh/themes/
+ZSH_THEME="mytheme"
+
+# PROMPT=' %{$fg[cyan]%}%c $(git_prompt_info)'
+# PROMPT+="%(?:%{$fg[green]%}> :%{$fg[red]%}> )%{$reset_color%}" 
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}("
+# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}) %{$fg[red]%}✗"
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[red]%})"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -108,3 +116,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi

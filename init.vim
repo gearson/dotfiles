@@ -1,12 +1,5 @@
-" Fisa-vim-config, a config for both Vim and NeoVim
-" http://vim.fisadev.com
-" version: 12.0.0
 
-""  To use fancy symbols wherever possible, change this setting from 0 to 1
-""  and use a font from https://github.com/ryanoasis/nerd-fonts in your terminal 
-" (if you aren't using one of those fonts, you will see funny characters here. 
-" Turst me, they look nice when using one of those fonts).
-" Create a function to open a neovim terminal in a small split window and run python 
+
 function! Termpy()
   exec winheight(0)/4."split" | terminal python3 %
 endfunction
@@ -86,7 +79,6 @@ Plug 'majutsushi/tagbar'
 " Search results counter
 Plug 'vim-scripts/IndexedSearch'
 " A couple of nice colorschemes
-" Plug 'fisadev/fisa-vim-colorscheme'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -287,17 +279,17 @@ nmap ,t :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " Enable folder icons
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:DevIconsEnableFoldersOpenClose = 1
 
 " Fix directory colors
 highlight! link NERDTreeFlags NERDTreeDir
 
 " Remove expandable arrow
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
-let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
-let NERDTreeDirArrowExpandable = "\u00a0"
-let NERDTreeDirArrowCollapsible = "\u00a0"
+" let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+let NERDTreeDirArrowExpandable = ">"
+let NERDTreeDirArrowCollapsible = "<"
 let NERDTreeNodeDelimiter = "\x07"
 
 " Autorefresh on tree focus
@@ -438,11 +430,17 @@ if fancy_symbols_enabled
     if !exists('g:airline_symbols')
        let g:airline_symbols = {}
     endif
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
+    let g:airline_left_sep = '|'
+    let g:airline_left_alt_sep = '|'
+    let g:airline_right_sep = '|'
     let g:webdevicons_enable = 0
 endif
+
+" let g:airline_left_sep = '|'
+" let g:airline_left_alt_sep = '|'
+" let g:airline_right_sep = '|'
+" let g:airline_right_sep = '|'
+
 
 " Custom configurations ----------------
 
@@ -455,3 +453,5 @@ endif
 if filereadable(expand(custom_configs_path))
   execute "source " . custom_configs_path
 endif
+
+set clipboard=unnamedplus
