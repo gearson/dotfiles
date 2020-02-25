@@ -9,7 +9,7 @@ map <leader>p :w<CR>:!python %<CR>
 map <leader>t :new term://zsh <CR>
 
 let fancy_symbols_enabled = 0
-
+set noswapfile
 
 set encoding=utf-8
 let using_neovim = has('nvim')
