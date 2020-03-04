@@ -50,8 +50,7 @@ alias sdenv="source ./.env && set -a && source ./.env && set +a"
 alias cdcode="cd ~/code/"
 alias vim="nvim"
 alias notes="nvim ~/Documents/notes/."
-
-
+alias vpn="sudo openvpn ~/dotfiles/SD-VPN/mail_smart_digital_de_VPN1.ovpn"
 # Other Stuff 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
