@@ -51,6 +51,9 @@ alias cdcode="cd ~/code/"
 alias vim="nvim"
 alias notes="nvim ~/Documents/notes/."
 alias vpn="sudo openvpn ~/dotfiles/SD-VPN/mail_smart_digital_de_VPN1.ovpn"
+
+alias gearsongit="ssh-add -D & ssh-add ~/.ssh/id_rsa_gearson & ssh -T git@github.com"
+alias sdgit="ssh-add -D & ssh-add ~/.ssh/id_rsa_sd & ssh -T git@github.com"
 # Other Stuff 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
