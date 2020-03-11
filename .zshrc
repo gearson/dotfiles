@@ -6,11 +6,6 @@ export ZSH="/home/deniz/.oh-my-zsh"
 
 eval `dircolors ~/dotfiles/.dircolors`
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# make sure my theme exists in .oh-my-zsh/themes/
 ZSH_THEME="mytheme"
 
 # this is in mytheme. It's an adjusted robbyrussell
@@ -39,10 +34,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ae="deactivate &> /dev/null; source ./venv/bin/activate"
 alias de="deactivate"
@@ -54,6 +45,7 @@ alias vpn="tmux rename-window vpn && cd ~/dotfiles/SD-VPN && sudo openvpn ~/dotf
 
 alias gearsongit="ssh-add -D & ssh-add ~/.ssh/id_rsa_gearson & ssh -T git@github.com"
 alias sdgit="ssh-add -D & ssh-add ~/.ssh/id_rsa_sd & ssh -T git@github.com"
+
 # Other Stuff 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
