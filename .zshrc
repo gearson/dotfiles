@@ -45,9 +45,8 @@ alias vpn="tmux rename-window vpn && cd ~/dotfiles/SD-VPN && sudo openvpn ~/dotf
 alias gearsongit="ssh-add -D && ssh-add ~/.ssh/id_rsa_gearson && ssh -T git@github.com"
 alias sdgit="ssh-add -D && ssh-add ~/.ssh/id_rsa_sd && ssh -T git@github.com"
 
-# Other Stuff 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Other Stuff
+if [ "$TMUX" = "" ]; then tmux; fi
 
 
 ####################
