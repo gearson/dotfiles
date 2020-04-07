@@ -46,28 +46,22 @@ alias gearsongit="ssh-add -D && ssh-add ~/.ssh/id_rsa_gearson && ssh -T git@gith
 alias sdgit="ssh-add -D && ssh-add ~/.ssh/id_rsa_sd && ssh -T git@github.com"
 
 # Other Stuff
-if [ "$TMUX" = "" ]; then tmux; fi
+#if [ "$TMUX" = "" ]; then tmux; fii
 
+# check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
+current_terminal="$(ps -p$PPID -o cmd=)"
+if [[ $current_terminal =~ 'cool-retro-term' ]]; then tmux; fi
+if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux; fi
 
 ####################
 # Additional Options
 ####################
-#
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
@@ -96,6 +90,3 @@ if [ "$TMUX" = "" ]; then tmux; fi
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
