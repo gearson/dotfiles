@@ -144,9 +144,9 @@ Plug 'neomake/neomake'
 " on/off. When the plugin is present, will always activate the relative
 " numbering every time you go to normal mode. Author refuses to add a setting
 "i to avoid that)
-Plug 'myusuf3/numbers.vim'
+" Plug 'myusuf3/numbers.vim'
 " Nice icons in the file explorer and file type status line.
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 if using_vim
     " Consoles as buffers (neovim has its own consoles as buffers)
