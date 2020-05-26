@@ -1,13 +1,4 @@
 
-
-function! Termpy()
-  exec winheight(0)/4."split" | terminal python3 %
-endfunction
-" Press CTRL+R to run python script into separate term window 
-nnoremap <C-R> :call Termpy() <CR>
-map <leader>p :w<CR>:!python %<CR>
-map <leader>t :new term://zsh <CR>
-
 let fancy_symbols_enabled = 0
 set noswapfile
 
@@ -86,31 +77,13 @@ Plug 'vim-airline/vim-airline-themes'
 " Code and files fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Pending tasks list
-Plug 'fisadev/FixedTaskList.vim'
-" Async autocompletion
-if using_neovim && vim_plug_just_installed
-    Plug 'Shougo/deoplete.nvim', {'do': ':autocmd VimEnter * UpdateRemotePlugins'}
-else
-    Plug 'Shougo/deoplete.nvim'
-endif
-Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-" Python autocompletion
-Plug 'deoplete-plugins/deoplete-jedi'
 " Completion from other opened files
 Plug 'Shougo/context_filetype.vim'
-" Just to add the python go-to-definition and similar features, autocompletion
-" from this plugin is disabled
-Plug 'davidhalter/jedi-vim'
-Plug 'deoplete-plugins/deoplete-jedi'
-" Completion from other opened files
-Plug 'Shougo/context_filetype.vim'
-" Just to add the python go-to-definition and similar features, autocompletion
-" from this plugin is disabled
-Plug 'davidhalter/jedi-vim'
 " Automatically close parenthesis, etc
-Plug 'Townk/vim-autoclose'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'junegunn/rainbow_parentheses.vim'
 " Surround
 Plug 'tpope/vim-surround'
 " Indent text object
@@ -119,14 +92,10 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'jeetsukumaran/vim-indentwise'
 " Better language packs
 Plug 'sheerun/vim-polyglot'
-" Ack code search (requires ack installed in the system)
-Plug 'mileszs/ack.vim'
 " Paint css colors with the real color
 Plug 'lilydjwg/colorizer'
 " Window chooser
 Plug 't9md/vim-choosewin'
-" Automatically sort python imports
-" Plug 'fisadev/vim-isort'
 " Highlight matching html tags
 Plug 'valloric/MatchTagAlways'
 " Generate html in a simple way
@@ -146,19 +115,7 @@ Plug 'neomake/neomake'
 "i to avoid that)
 " Plug 'myusuf3/numbers.vim'
 " Nice icons in the file explorer and file type status line.
-" Plug 'ryanoasis/vim-devicons'
 
-if using_vim
-    " Consoles as buffers (neovim has its own consoles as buffers)
-    Plug 'rosenfeld/conque-term'
-    " XML/HTML tags navigation (neovim has its own)
-    Plug 'vim-scripts/matchit.zip'
-endif
-
-" Code searcher. If you enable it, you should also configure g:hound_base_url 
-" and g:hound_port, pointing to your hound instance
-" Plug 'mattn/webapi-vim'
-" Plug 'jfo/hound.vim'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -196,16 +153,8 @@ else
     colorscheme delek
 endif
 
-" needed so deoplete can auto select the first suggestion
-set completeopt+=noinsert
-" comment this line to enable autocompletion preview window
-" (displays documentation related to the selected completion option)
 " disabled by default because preview makes the window flicker
 set completeopt-=preview
-
-" autocompletion of files and commands behaves like shell
-" (complete only the common part, list the options that match)
-set wildmode=list:longest
 
 " save as sudo
 ca w!! w !sudo tee "%"
@@ -253,10 +202,6 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 " fix problems with uncommon shells (fish, xonsh) and plugins running commands
 " (neomake, ...)
 set shell=/bin/bash 
-
-" Ability to add python breakpoints
-" (I use ipdb, but you can change it to whatever tool you use for debugging)
-au FileType python map <silent> <leader>b Oimport ipdb; ipdb.set_trace()<esc>
 
 " ============================================================================
 " Plugins settings and mappings
@@ -343,37 +288,6 @@ nmap ,wF :execute ":Lines " . expand('<cword>')<CR>
 " commands finder mapping
 nmap ,c :Commands<CR>
 
-" Deoplete -----------------------------
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
-" complete with words from any opened file
-let g:context_filetype#same_filetypes = {}
-let g:context_filetype#same_filetypes._ = '_'
-
-" Jedi-vim ------------------------------
-
-" Disable autocompletion (using deoplete instead)
-let g:jedi#completions_enabled = 0
-
-" All these mappings work only for python code:
-" Go to definition
-let g:jedi#goto_command = ',d'
-" Find ocurrences
-let g:jedi#usages_command = ',o'
-" Find assignments
-let g:jedi#goto_assignments_command = ',a'
-" Go to definition in new tab
-nmap ,D :tab split<CR>:call jedi#goto()<CR>
-
-" Ack.vim ------------------------------
-
-" mappings
-nmap ,r :Ack 
-nmap ,wr :execute ":Ack " . expand('<cword>')<CR>
-
 " Window Chooser ------------------------------
 
 " mapping
@@ -396,13 +310,6 @@ highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
 highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
 highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
 highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
-
-" Autoclose ------------------------------
-
-" Fix to let ESC work as espected with Autoclose plugin
-" (without this, when showing an autocompletion window, ESC won't leave insert
-"  mode)
-let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 
 " Yankring -------------------------------
 

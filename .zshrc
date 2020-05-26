@@ -90,3 +90,5 @@ if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux; fi
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
