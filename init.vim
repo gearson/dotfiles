@@ -10,6 +10,7 @@ command! -nargs=1 Ngrep vimgrep "<args>" ~/Documents/notes/**/*.md
 nnoremap <leader>f :Ngrep
 nnoremap <leader>[ :cprev <CR>
 nnoremap <leader>] :cnext <CR>
+nnoremap <leader>c :let @+=expand("%:p") <CR>
 
 let g:dracula_colorterm=0
 
