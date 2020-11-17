@@ -8,6 +8,13 @@ eval `dircolors ~/dotfiles/.dircolors`
 
 ZSH_THEME="mytheme"
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+setopt sharehistory      #Share history across terminals
+setopt incappendhistory  #Immediately append to the history file, not just when a term is killed
+
 # this is in mytheme. It's an adjusted robbyrussell
 # PROMPT=' %{$fg[cyan]%}%c $(git_prompt_info)'
 # PROMPT+="%(?:%{$fg[green]%}> :%{$fg[red]%}> )%{$reset_color%}" 
