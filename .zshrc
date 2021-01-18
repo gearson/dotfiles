@@ -57,8 +57,12 @@ alias sdgit="ssh-add -D && ssh-add ~/.ssh/id_rsa_sd && ssh -T git@github.com"
 
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
 current_terminal="$(ps -p$PPID -o cmd=)"
-if [[ $current_terminal =~ 'cool-retro-term' ]]; then tmux; fi
 if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux attach || tmux new; fi
+
+export PATH="/home/deniz/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 
 ####################
 # Additional Options
