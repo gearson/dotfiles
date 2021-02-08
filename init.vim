@@ -76,9 +76,9 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Code and files fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
+"Plug 'roxma/vim-hug-neovim-rpc'
 " Completion from other opened files
 Plug 'Shougo/context_filetype.vim'
 " Automatically close parenthesis, etc
@@ -98,9 +98,9 @@ Plug 'lilydjwg/colorizer'
 " Window chooser
 Plug 't9md/vim-choosewin'
 " Highlight matching html tags
-Plug 'valloric/MatchTagAlways'
+" Plug 'valloric/MatchTagAlways'
 " Generate html in a simple way
-Plug 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 " Git integration
 Plug 'tpope/vim-fugitive'
 " Git/mercurial/others diff icons on the side of the file lines
