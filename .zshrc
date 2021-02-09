@@ -29,7 +29,7 @@ setopt incappendhistory  #Immediately append to the history file, not just when 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(virtualenv git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,7 +43,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 alias ae="deactivate &> /dev/null; source ./venv/bin/activate"
-alias de="deactivate"
+alias de="pyenv deactivate"
 alias sdenv="source ./.env && set -a && source ./.env && set +a"
 alias cdcode="cd ~/code/"
 alias vim="nvim"
@@ -58,6 +58,13 @@ alias sdgit="ssh-add -D && ssh-add ~/.ssh/sd_id_rsa && ssh -T git@github.com"
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
 current_terminal="$(ps -p$PPID -o cmd=)"
 if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux attach || tmux new; fi
+
+# to get a correct prompt when using pyenv
+function virtualenv_info { 
+[ $VIRTUAL_ENV ] && echo ‘(‘`basename $VIRTUAL_ENV`’) ‘ 
+}
+# disable the default virtualenv prompt change
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 export PATH="/home/deniz/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
