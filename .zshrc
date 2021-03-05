@@ -110,3 +110,4 @@ eval "$(pyenv virtualenv-init -)"
 # HIST_STAMPS="mm/dd/yyyy"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias cdfollowup="cd ~/code/gearson/FollowUp_Analysis && ae followup"
