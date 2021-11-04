@@ -21,11 +21,13 @@ set signcolumn=yes
 set colorcolumn=79
 set cursorline
 
+set clipboard=unnamedplus
+
 " Give more space for displaying messages
 set cmdheight=2
 
 " longer updatetime for better experience
-set updatetime=50
+set updatetime=500
 
 
 " Vim-plug initialization
@@ -88,6 +90,8 @@ Plug 'michaeljsmith/vim-indent-object'
 " Git integration
 Plug 'tpope/vim-fugitive'
 
+" Better language packs
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -113,8 +117,7 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
-"let g:python3_host_prog = '/home/deniz/.pyenv/versions/3.8.6/envs/py3nvim/bin/python'
-let g:python3_host_prog = '/home/deniz/.pyenv/shims/python3' " -------- Set python 3 provider
+"let g:python3_host_prog = '/home/deniz/.pyenv/shims/python3' " -------- Set python 3 provider
 
 
 
@@ -194,7 +197,4 @@ nmap ,c :Commands<CR>
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'dracula'
 let g:airline#extensions#whitespace#enabled = 0
-" ============================================================================
-" Plugin Settings 
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
