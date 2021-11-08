@@ -52,8 +52,9 @@ alias vpn="tmux rename-window vpn && cd ~/dotfiles/SD-VPN && sudo openvpn ~/dotf
 alias gearsongit="ssh-add -D && ssh-add ~/.ssh/gearson_id_rsa && ssh -T git@github.com"
 alias sdgit="ssh-add -D && ssh-add ~/.ssh/sd_id_rsa && ssh -T git@github.com"
 
-# Other Stuff
-#if [ "$TMUX" = "" ]; then tmux; fii
+alias dotfiles="cd ~/dotfiles && la"
+alias cdfollowup="cd ~/code/gearson/FollowUp_Analysis && ae followup"
+
 
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
 current_terminal="$(ps -p$PPID -o cmd=)"
@@ -111,4 +112,3 @@ eval "$(pyenv virtualenv-init -)"
 # HIST_STAMPS="mm/dd/yyyy"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-alias cdfollowup="cd ~/code/gearson/FollowUp_Analysis && ae followup"

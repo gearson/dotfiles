@@ -1,0 +1,17 @@
+{
+    "pyright.enable": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/home/deniz/.pyenv/versions/3.8.6/envs/py3nvim/bin/black",
+    //"coc.preferences.formatOnSaveFiletypes": ["python"],
+    //"python.pythonPath": "PATH_TO_PYTHON_BINARY", 
+    //"python.formatting.blackPath": "PATH_TO_BLACK_BINARY",
+    "coc.preferences.formatOnType": true,
+
+    "suggest.enablePreview": true,
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": false, 
+    "coc.preferences.extensionUpdateCheck": "daily"
+}

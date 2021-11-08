@@ -131,10 +131,14 @@ nmap <silent> gd <Plug>(coc-definition)
 "nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Formatting current document
+nmap <leader>f :call CocAction('format')<CR>
+" Save Document
+nnoremap <leader>s :w<CR>
+nnoremap <leader>q :q<CR>
 
-"split navigations
-
-""nnoremap <C-J> <C-W><C-J>
+"==== split navigations
+"nnoremap <C-J> <C-W><C-J>
 "nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
@@ -160,7 +164,7 @@ map <C-Right> <Esc>:bnext<CR>
 map <C-b> :NERDTreeToggle<CR>
 " open nerdtree with the current file selected
 nmap ,t :NERDTreeFind<CR>
-" don;t show these file types
+" don't show these file types
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 " Fix directory colors
 highlight! link NERDTreeFlags NERDTreeDir
@@ -188,6 +192,8 @@ nmap ,wF :execute ":Lines " . expand('<cword>')<CR>
 " commands finder mapping
 nmap ,c :Commands<CR>
 
+
+nnoremap <C-p> :GFiles<Cr>
 
 " ============================================================================
 "" Plugin Settings 
