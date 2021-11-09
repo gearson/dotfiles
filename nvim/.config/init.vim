@@ -108,16 +108,18 @@ augroup rainbow
   autocmd FileType py,json RainbowParentheses!
 augroup END
 
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
 "==== Semshi custom colors
 function MyCustomHighlights()
     hi semshiSelected        guifg= ctermbg=161 guibg=#44475a
-    hi semshiImported        ctermfg=231 guifg=#8be9fd
+    hi semshiImported        ctermfg=231 guifg=none gui=none
+    hi semshiGlobal        ctermfg=231 guifg=none
     hi semshiParameter        ctermfg=231 guifg=#ffb86c
     hi semshiBuiltin        ctermfg=231 guifg=#8be9fd
     hi semshiParemeterUnused        ctermfg=231 guifg=#ff5555
 endfunction
 autocmd FileType python call MyCustomHighlights()
-
 
 
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-snippets']
