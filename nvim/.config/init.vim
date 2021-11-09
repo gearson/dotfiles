@@ -24,8 +24,8 @@ set cursorline
 set clipboard=unnamedplus
 
 " Give more space for displaying messages
-set cmdheight=2
-
+set cmdheight=1
+            
 " longer updatetime for better experience
 set updatetime=500
 
@@ -81,7 +81,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'junegunn/rainbow_parentheses.vim'
-
 " Surround
 Plug 'tpope/vim-surround'
 " Indent text object
@@ -92,9 +91,9 @@ Plug 'tpope/vim-fugitive'
 
 " Better language packs
 Plug 'sheerun/vim-polyglot'
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins'} 
 
 call plug#end()
-
 
 " ============================================================================
 " Plugin Settings 
@@ -102,6 +101,24 @@ call plug#end()
 
 let g:dracula_colorterm = 0
 colorscheme dracula
+
+augroup rainbow
+  autocmd!
+  autocmd FileType * RainbowParentheses
+  autocmd FileType py,json RainbowParentheses!
+augroup END
+
+"==== Semshi custom colors
+function MyCustomHighlights()
+    hi semshiSelected        guifg= ctermbg=161 guibg=#44475a
+    hi semshiImported        ctermfg=231 guifg=#8be9fd
+    hi semshiParameter        ctermfg=231 guifg=#ffb86c
+    hi semshiBuiltin        ctermfg=231 guifg=#8be9fd
+    hi semshiParemeterUnused        ctermfg=231 guifg=#ff5555
+endfunction
+autocmd FileType python call MyCustomHighlights()
+
+
 
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-snippets']
 
@@ -118,7 +135,6 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 "let g:python3_host_prog = '/home/deniz/.pyenv/shims/python3' " -------- Set python 3 provider
-
 
 
 " ============================================================================
@@ -203,4 +219,6 @@ nnoremap <C-p> :GFiles<Cr>
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'dracula'
 let g:airline#extensions#whitespace#enabled = 0
+
+"let g:python3_highlight_all = 1
 
