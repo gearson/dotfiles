@@ -20,13 +20,13 @@ set termguicolors
 set signcolumn=yes
 set colorcolumn=79
 set cursorline
-
 set clipboard=unnamedplus
+set mouse+=a
 
 " Give more space for displaying messages
 set cmdheight=1
             
-" longer updatetime for better experience
+" shorter updatetime for better experience
 set updatetime=500
 
 
@@ -99,9 +99,11 @@ call plug#end()
 " Plugin Settings 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" theme
 let g:dracula_colorterm = 0
 colorscheme dracula
 
+" rainbow_parentheses
 augroup rainbow
   autocmd!
   autocmd FileType * RainbowParentheses
@@ -110,7 +112,7 @@ augroup END
 
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
-"==== Semshi custom colors
+" Semshi custom colors for syntax highlighting
 function MyCustomHighlights()
     hi semshiSelected        guifg= ctermbg=161 guibg=#44475a
     hi semshiImported        ctermfg=231 guifg=none gui=none
@@ -121,7 +123,7 @@ function MyCustomHighlights()
 endfunction
 autocmd FileType python call MyCustomHighlights()
 
-
+" Coc Settings
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-snippets']
 
 inoremap <silent><expr> <TAB>
@@ -136,14 +138,14 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
-"let g:python3_host_prog = '/home/deniz/.pyenv/shims/python3' " -------- Set python 3 provider
-
 
 " ============================================================================
 " Remappings
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" \ is the leader key
 
-" Remap keys for gotos
+"" Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 "nmap <silent> gy <Plug>(coc-type-definition)
 "nmap <silent> gi <Plug>(coc-implementation)
@@ -153,9 +155,10 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>f :call CocAction('format')<CR>
 " Save Document
 nnoremap <leader>s :w<CR>
+" close document
 nnoremap <leader>q :q<CR>
 
-"==== split navigations
+" split navigation in Vim
 "nnoremap <C-J> <C-W><C-J>
 "nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -213,14 +216,9 @@ nmap ,c :Commands<CR>
 
 nnoremap <C-p> :GFiles<Cr>
 
-" ============================================================================
-"" Plugin Settings 
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline ------------------------------
 
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'dracula'
 let g:airline#extensions#whitespace#enabled = 0
-
-"let g:python3_highlight_all = 1
 
