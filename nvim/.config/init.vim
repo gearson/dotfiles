@@ -179,6 +179,7 @@ vnoremap <C-k> :m '<-2<CR>gv==gv
 map <C-Left> <Esc>:bprev<CR>
 map <C-Right> <Esc>:bnext<CR>
 
+nnoremap <leader>l :b 
 " NERDTree -----------------------------
 
 " toggle nerdtree display
@@ -222,3 +223,5 @@ let g:airline_powerline_fonts = 0
 let g:airline_theme = 'dracula'
 let g:airline#extensions#whitespace#enabled = 0
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 0
