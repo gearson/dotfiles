@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
     -- parentheses and stuff
     use {'jiangmiao/auto-pairs'}
     use {'alvan/vim-closetag'}
-    use {'junegunn/rainbow_parentheses.vim'}
     
     use{'tpope/vim-fugitive'}
 

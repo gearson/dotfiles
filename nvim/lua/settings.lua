@@ -55,19 +55,6 @@ vim.g["airline#extensions#whitespace#enabled"] = 0
 vim.g["airline#extensions#tabline#enabled"] = 1
 vim.g["airline#extensions#tabline#buffer_nr_show"] = 0
 
--- rainbow parentheses settings
-vim.api.nvim_exec(
-  [[
-  augroup rainbow
-    autocmd!
-    autocmd FileType * RainbowParentheses
-    autocmd FileType py,json RainbowParentheses!
-  augroup end
-]],
-  false
-)
-vim.cmd("let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]")
-
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
