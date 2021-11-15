@@ -5,9 +5,8 @@
 export ZSH="/home/deniz/.oh-my-zsh"
 
 eval `dircolors ~/dotfiles/.dircolors`
-
 ZSH_THEME="mytheme"
-
+#export TERM=xterm-256color
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -62,6 +61,7 @@ alias cd-sdnifti="cd ~/code/sd/sd-nifti && ae sd-nifti"
 current_terminal="$(ps -p$PPID -o cmd=)"
 if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux attach || tmux new; fi
 if [[ $current_terminal =~ 'cool-retro-term' ]]; then tmux attach || tmux new; fi
+if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
 
 # to get a correct prompt when using pyenv
 function virtualenv_info { 

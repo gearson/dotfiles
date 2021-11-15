@@ -12,7 +12,6 @@ o.updatetime = 250
 o.signcolumn = 'yes'
 o.number = true
 o.relativenumber = true
-
 o.expandtab = true
 o.smarttab = true
 o.smartindent = true
@@ -23,7 +22,7 @@ o.shiftwidth = 4
 o.hidden = true
 o.swapfile = false
 o.scrolloff = 8
-o.colorcolumn = '79'
+o.colorcolumn = '80'
 o.cursorline = true
 o.smartcase = true
 o.undofile = true
@@ -31,6 +30,7 @@ o.backup = false
 o.encoding = 'utf-8'
 o.hlsearch = false
 o.cmdheight = 1
+
 -- highlight on yank
 vim.api.nvim_exec(
   [[
@@ -43,10 +43,16 @@ vim.api.nvim_exec(
 )
 
 --Set colorscheme (order is important here)
+
 o.background = 'dark'
+vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR=1')
 o.termguicolors = true
+
 vim.cmd [[colorscheme dracula]]
 vim.g["dracula_colorterm"] = 0
+vim.g["dracula_italic"] = 0
+vim.cmd[[au VimEnter * highlight ColorColumn guibg=#44475a gui=NONE]]
+vim.cmd[[au VimEnter * highlight CursorLineNr guifg=#ff79c6 gui=NONE]]
 
 -- airline settings
 vim.g["airline_powerline_fonts"] = 0
@@ -54,6 +60,8 @@ vim.g["airline_theme"] = 'dracula'
 vim.g["airline#extensions#whitespace#enabled"] = 0
 vim.g["airline#extensions#tabline#enabled"] = 1
 vim.g["airline#extensions#tabline#buffer_nr_show"] = 0
+vim.g["airline#extensions#tabline#fnamemod"] = ':t'
+vim.g["airline_powerline_fonts"] = 1
 
 
 -- Treesitter configuration
