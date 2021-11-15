@@ -24,20 +24,25 @@ return require('packer').startup(function(use)
     -- airline
     use {'vim-airline/vim-airline'}
     use {'vim-airline/vim-airline-themes'}
+    use {'kyazdani42/nvim-web-devicons'}
     -- parentheses and stuff
     use {'jiangmiao/auto-pairs'}
     use {'alvan/vim-closetag'}
+    use {'tpope/vim-surround'}
+    use {'lukas-reineke/indent-blankline.nvim'}
     
     use{'tpope/vim-fugitive'}
-
+    use{'voldikss/vim-floaterm'}
     -- language server
-    --use {'neovim/nvim-lspconfig'}
-    --use {'hrsh7th/nvim-cmp'}
-    --use {'hrsh7th/cmp-nvim-lsp'}
     use {'neoclide/coc.nvim', branch='release'} -- run :CocInstall coc-pyright
     use {'nvim-treesitter/nvim-treesitter'}
+    --use {'neovim/nvim-lspconfig'}
+    --use {'hrsh7th/cmp-nvim-lsp'}
+    --use {'hrsh7th/nvim-cmp'}
+
     -- telescope
     use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}}
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

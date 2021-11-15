@@ -2,7 +2,6 @@ local o = vim.o
 
 -- Makes neovim and host OS clipboard play nicely with each other
 o.clipboard = 'unnamedplus'
-o.hidden = true
 vim.opt.mouse = vim.opt.mouse + 'a'
 o.guicursor = 'a:blinkon400' 
 vim.opt.undofile = true
@@ -19,6 +18,8 @@ o.wrap = true
 o.tabstop = 4
 o.softtabstop = 5
 o.shiftwidth = 4
+o.list = true
+vim.cmd('set listchars=tab:►/,trail:•')
 o.hidden = true
 o.swapfile = false
 o.scrolloff = 8
@@ -120,68 +121,19 @@ require('nvim-treesitter.configs').setup {
 
 -- Coc Settiings
 
-vim.cmd("let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-snippets']")
+vim.cmd("let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-snippets', 'coc-prettier']")
+vim.cmd("source ~/dotfiles/nvim/lua/coc-completion.vim")
 
+-- Telescope Settings
+-- Telescope
+require('telescope').setup {
+  defaults = {
+    mappings = {
+      i = {
+        ['<C-u>'] = false,
+        ['<C-d>'] = false,
+      },
+    },
+  },
+}
 
-vim.cmd("let g:coc_snippet_next= '<tab>'")
---o.completeopt='menu,menuone,noselect'
-
---require'lspconfig'.pyright.setup{}
-
- -- Setup nvim-cmp--[[.]]
-  --[[local cmp = require'cmp']]
-
-  --[[cmp.setup({]]
-    --[[snippet = {]]
-      --[[-- REQUIRED - you must specify a snippet engine]]
-      --[[expand = function(args)]]
-        --[[vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.]]
-        --[[-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.]]
-        --[[-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.]]
-        --[[-- require'snippy'.expand_snippet(args.body) -- For `snippy` users.]]
-      --[[end,]]
-    --[[},]]
-    --[[mapping = {]]
-      --[[['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),]]
-      --[[['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),]]
-      --[[['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),]]
-      --[[['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.]]
-      --[[['<C-e>'] = cmp.mapping({]]
-        --[[i = cmp.mapping.abort(),]]
-        --[[c = cmp.mapping.close(),]]
-      --[[}),]]
-      --[[['<CR>'] = cmp.mapping.confirm({ select = true }),]]
-    --[[},]]
-    --[[sources = cmp.config.sources({]]
-      --[[{ name = 'nvim_lsp' },]]
-      --[[{ name = 'vsnip' }, -- For vsnip users.]]
-      --[[-- { name = 'luasnip' }, -- For luasnip users.]]
-      --[[-- { name = 'ultisnips' }, -- For ultisnips users.]]
-      --[[-- { name = 'snippy' }, -- For snippy users.]]
-    --[[}, {]]
-      --[[{ name = 'buffer' },]]
-    --[[})]]
-  --[[})]]
-
-  --[[-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).]]
-  --[[cmp.setup.cmdline('/', {]]
-    --[[sources = {]]
-      --[[{ name = 'buffer' }]]
-    --[[}]]
-  --[[})]]
-
-  --[[-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).]]
-  --[[cmp.setup.cmdline(':', {]]
-    --[[sources = cmp.config.sources({]]
-      --[[{ name = 'path' }]]
-    --[[}, {]]
-      --[[{ name = 'cmdline' }]]
-    --[[})]]
-  --[[})]]
-
-  --[[-- Setup lspconfig.]]
-  --[[local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())]]
-  --[[-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.]]
-  --[[require('lspconfig')['pyright'].setup {]]
-    --[[capabilities = capabilities]]
-  --[[}]]
