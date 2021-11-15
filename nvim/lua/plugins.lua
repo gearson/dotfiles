@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
     use {'alvan/vim-closetag'}
     use {'tpope/vim-surround'}
     use {'lukas-reineke/indent-blankline.nvim'}
+    use {'mechatroner/rainbow_csv'}
     
     use{'tpope/vim-fugitive'}
     use{'voldikss/vim-floaterm'}
