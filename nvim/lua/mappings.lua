@@ -11,15 +11,15 @@ vim.api.nvim_set_keymap('v', '<C-j>', ":m '>+1<CR>gv==gv", {noremap = true, sile
 vim.api.nvim_set_keymap('v', '<C-k>', ":m '<-2<CR>gv==gv", {noremap = true, silent = true})
 
 -- split navigation in vim
-vim.api.nvim_set_keymap('n', '<C-L>', '<C-W><C-L>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-H>', '<C-W><C-H>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-Left>', '<C-W><C-H>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-Right>', '<C-W><C-L>', {noremap = true, silent = true})
+--vim.api.nvim_set_keymap('n', '<C-Left>', '<C-W><C-H>', {noremap = true, silent = true})
+--vim.api.nvim_set_keymap('n', '<C-Right>', '<C-W><C-L>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-Down>', '<C-W><C-J>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-Up>', '<C-W><C-K>', {noremap = true, silent = true})
 -- switch buffers
-vim.api.nvim_set_keymap('n', '<C-[>', ':bprev<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-]>', ':bnext<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-H>', ':bprev<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-L>', ':bnext<CR>', {noremap = true, silent = true})
 
 -- NERDtree
 vim.api.nvim_set_keymap('n', '<C-b>', ':NERDTreeToggle<CR>', {silent = true})
