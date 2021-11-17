@@ -29,6 +29,9 @@ vim.api.nvim_set_keymap('n', '<C-b>', ':NERDTreeToggle<CR>', {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>f', ":call CocAction('format')<CR>", {silent = false})
 vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', {noremap = false, silent = false})
 vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', {noremap = false, silent = false})
+vim.api.nvim_set_keymap('n', '[g', '<Plug>(coc-diagnostic-prev)', {noremap = false, silent = false})
+vim.api.nvim_set_keymap('n', ']g', '<Plug>(coc-diagnostic-next)', {noremap = false, silent = false})
+vim.api.nvim_set_keymap('n', '<F2>', '<Plug>(coc-rename)', {noremap = false, silent = false})
 
 
 -- Floaterm toggle

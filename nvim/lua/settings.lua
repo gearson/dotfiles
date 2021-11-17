@@ -123,6 +123,8 @@ require('nvim-treesitter.configs').setup {
 
 vim.cmd("let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-snippets', 'coc-prettier']")
 vim.cmd("source ~/dotfiles/nvim/lua/coc-completion.vim")
+-- highlight the symbol and it's references
+vim.cmd("autocmd CursorHold * silent call CocActionAsync('highlight')") 
 
 -- Telescope Settings
 -- Telescope
@@ -136,4 +138,4 @@ require('telescope').setup {
     },
   },
 }
-
+require('telescope').load_extension('coc')
