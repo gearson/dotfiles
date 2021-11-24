@@ -56,7 +56,8 @@ alias cdfollowup="cd ~/code/gearson/FollowUp_Analysis && ae followup"
 alias vimrc="vim ~/dotfiles/nvim/lua/settings.lua"
 alias formatjson="vim ~/Documents/temp.json"
 
-alias cd-sdnifti="cd ~/code/sd/sd-nifti && ae sd-nifti && vim ."
+alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm && ae nifti-lstm"
+alias ta='tmux attach -t "$(tmux ls | cut -d : -f1 | fzf)"'
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
 current_terminal="$(ps -p$PPID -o cmd=)"
 if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux attach || tmux new; fi

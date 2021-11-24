@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
     use {'vim-airline/vim-airline'}
     use {'vim-airline/vim-airline-themes'}
     use {'kyazdani42/nvim-web-devicons'}
+    use {'ryanoasis/vim-devicons'}
     -- parentheses and stuff
     use {'jiangmiao/auto-pairs'}
     use {'alvan/vim-closetag'}
