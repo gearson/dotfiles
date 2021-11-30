@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
     use {'tpope/vim-surround'}
     use {'lukas-reineke/indent-blankline.nvim'}
     use {'mechatroner/rainbow_csv'}
+    use {'Vimjas/vim-python-pep8-indent'}
     
     use{'tpope/vim-fugitive'}
     use{'voldikss/vim-floaterm'}
