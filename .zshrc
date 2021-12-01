@@ -52,12 +52,13 @@ alias gearsongit="ssh-add -D && ssh-add ~/.ssh/gearson_id_rsa && ssh -T git@gith
 alias sdgit="ssh-add -D && ssh-add ~/.ssh/sd_id_rsa && ssh -T git@github.com"
 
 alias dotfiles="cd ~/dotfiles && la"
-alias cdfollowup="cd ~/code/gearson/FollowUp_Analysis && ae followup"
 alias vimrc="vim ~/dotfiles/nvim/lua/settings.lua"
-alias formatjson="vim ~/Documents/temp.json"
 
-alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm && ae nifti-lstm"
+alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm"
+
 alias ta='tmux attach -t "$(tmux ls | cut -d : -f1 | fzf)"'
+
+alias formatjson="vim ~/Documents/temp.json"
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
 current_terminal="$(ps -p$PPID -o cmd=)"
 if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux attach || tmux new; fi
