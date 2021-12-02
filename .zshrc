@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/deniz/.oh-my-zsh"
+export AOC_SESSION=53616c7465645f5f566917a12afa78ced353d875d83ef340bf230d799667dd186f47a19f7732cdfc733a635273be01cf
 
 eval `dircolors ~/dotfiles/.dircolors`
 ZSH_THEME="mytheme"
@@ -44,7 +45,6 @@ source $ZSH/oh-my-zsh.sh
 alias ae="deactivate &> /dev/null; pyenv activate"
 alias de="pyenv deactivate"
 alias sdenv="source ./.env && set -a && source ./.env && set +a"
-alias cdcode="cd ~/code/"
 alias vim="nvim"
 alias vpn="tmux rename-window vpn && cd ~/dotfiles/SD-VPN && sudo openvpn ~/dotfiles/SD-VPN/mail_smart_digital_de_VPN1.ovpn"
 
@@ -53,10 +53,13 @@ alias sdgit="ssh-add -D && ssh-add ~/.ssh/sd_id_rsa && ssh -T git@github.com"
 
 alias dotfiles="cd ~/dotfiles && la"
 alias vimrc="vim ~/dotfiles/nvim/lua/settings.lua"
+alias zshrc="vim ~/dotfiles/.zshrc"
 
+alias cdcode="cd ~/code/ && p"
 alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm"
+alias cdaoc="cd ~/code/gearson/advent-of-code"
 
-alias ta='tmux attach -t "$(tmux ls | cut -d : -f1 | fzf)"'
+alias p='nvim `fzf --preview="batcat --color always {}"`'
 
 alias formatjson="vim ~/Documents/temp.json"
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
