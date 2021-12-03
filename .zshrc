@@ -119,3 +119,6 @@ eval "$(pyenv virtualenv-init -)"
 # HIST_STAMPS="mm/dd/yyyy"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Created by `pipx` on 2021-12-03 23:44:54
+export PATH="$PATH:/home/deniz/.local/bin"
