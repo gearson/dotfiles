@@ -26,6 +26,7 @@ vim.api.nvim_set_keymap('n', '<C-b>', ':NERDTreeToggle<CR>', {silent = true})
 
 
 -- Coc bindings
+vim.api.nvim_set_keymap('n', '<leader>w', ":call CocAction('format')<CR> :w <CR>", {silent = false})
 vim.api.nvim_set_keymap('n', '<leader>f', ":call CocAction('format')<CR>", {silent = false})
 vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', {noremap = false, silent = false})
 vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', {noremap = false, silent = false})
