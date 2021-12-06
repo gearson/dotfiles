@@ -56,8 +56,8 @@ alias vimrc="vim ~/dotfiles/nvim/lua/settings.lua"
 alias zshrc="vim ~/dotfiles/.zshrc"
 
 alias cdcode="cd ~/code/ && p"
-alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm"
-alias cdaoc="cd ~/code/gearson/advent-of-code"
+alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm && tmux rename-window nifti-lstm"
+alias cdaoc="cd ~/code/gearson/advent-of-code && tmux rename-window aoc"
 
 alias p='nvim `fzf --preview="batcat --color always {}"`'
 
