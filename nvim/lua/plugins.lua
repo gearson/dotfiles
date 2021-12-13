@@ -20,8 +20,7 @@ return require('packer').startup(function(use)
     use {'dracula/vim', as = 'dracula'} -- theme
     --nerdtree stuff
     use {'scrooloose/nerdtree'}
-    use {
-        'numToStr/Comment.nvim',
+    use {'numToStr/Comment.nvim',
         config = function()
         require('Comment').setup()
         end
@@ -38,9 +37,10 @@ return require('packer').startup(function(use)
     use {'lukas-reineke/indent-blankline.nvim'}
     use {'mechatroner/rainbow_csv'}
     use {'Vimjas/vim-python-pep8-indent'}
-    
+
     use{'tpope/vim-fugitive'}
     use{'voldikss/vim-floaterm'}
+    use{'jpalardy/vim-slime'}
     -- language server
     use {'neoclide/coc.nvim', branch='release'} -- run :CocInstall coc-pyright
     use {'nvim-treesitter/nvim-treesitter'}

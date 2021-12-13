@@ -66,6 +66,11 @@ vim.g["airline#extensions#tabline#buffer_nr_show"] = 0
 vim.g["airline#extensions#tabline#fnamemod"] = ':t'
 vim.g["airline_powerline_fonts"] = 1
 
+-- vim-slime settings
+vim.g["slime_target"] = "tmux"
+vim.g["slime_pase_file"] = "$Home/.slime_pase"
+vim.g["slime_python_ipython"] = 1
+vim.cmd[[let g:slime_default_config = {'socket_name': 'default', 'target_pane': '{last}'} ]]
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
