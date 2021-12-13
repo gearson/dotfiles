@@ -20,7 +20,12 @@ return require('packer').startup(function(use)
     use {'dracula/vim', as = 'dracula'} -- theme
     --nerdtree stuff
     use {'scrooloose/nerdtree'}
-    use {'scrooloose/nerdcommenter'}
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+        require('Comment').setup()
+        end
+        }
     -- airline
     use {'vim-airline/vim-airline'}
     use {'vim-airline/vim-airline-themes'}

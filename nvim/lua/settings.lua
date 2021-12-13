@@ -44,15 +44,16 @@ vim.api.nvim_exec(
   false
 )
 
+
 --Set colorscheme (order is important here)
 
 o.background = 'dark'
 vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR=1')
 o.termguicolors = true
 
-vim.cmd [[colorscheme dracula]]
 vim.g["dracula_colorterm"] = 0
 vim.g["dracula_italic"] = 0
+vim.cmd [[colorscheme dracula]]
 vim.cmd[[au VimEnter * highlight ColorColumn guibg=#44475a gui=NONE]]
 vim.cmd[[au VimEnter * highlight CursorLineNr guifg=#ff79c6 gui=NONE]]
 
