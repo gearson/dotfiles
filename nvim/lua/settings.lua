@@ -24,7 +24,6 @@ vim.cmd('set listchars=tab:►/,trail:•')
 o.hidden = true
 o.swapfile = false
 o.scrolloff = 8
-o.colorcolumn = '80'
 o.cursorline = true
 o.smartcase = true
 o.undofile = true
@@ -32,6 +31,8 @@ o.backup = false
 o.encoding = 'utf-8'
 o.hlsearch = false
 o.cmdheight = 1
+
+vim.cmd("autocmd FileType python set colorcolumn=80") 
 
 -- highlight on yank
 vim.api.nvim_exec(
@@ -43,7 +44,6 @@ vim.api.nvim_exec(
 ]],
   false
 )
-
 
 --Set colorscheme (order is important here)
 
