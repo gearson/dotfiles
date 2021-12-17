@@ -2,13 +2,16 @@
 vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>s', ':w<CR>', {noremap = true, silent = false})
 
+vim.api.nvim_set_keymap('i', '<C-Del>', '<C-o>de', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<BS>', 'X', {noremap = true, silent = true})
+
 -- move single lines
 vim.api.nvim_set_keymap('n', '<C-j>', ':m .+1<CR>==', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-k>', ':m .-2<CR>==', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<C-j>', '<ESC>:m .+1<CR>==gi', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<C-k>', '<ESC>:m .-2<CR>==gi', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<C-j>', ":m '>+1<CR>gv==gv", {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<C-k>', ":m '<-2<CR>gv==gv", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<C-j>', ":m '>+1<CR>gv=gv", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<C-k>', ":m '<-2<CR>gv=gv", {noremap = true, silent = true})
 
 -- split navigation in vim
 vim.api.nvim_set_keymap('n', '<C-Left>', '<C-W><C-H>', {noremap = true, silent = true})
