@@ -1,5 +1,5 @@
 -- misc
-vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>q', ':bd<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>s', ':w<CR>', {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('i', '<C-Del>', '<C-o>de', {noremap = true, silent = true})
@@ -16,8 +16,6 @@ vim.api.nvim_set_keymap('v', '<C-k>', ":m '<-2<CR>gv=gv", {noremap = true, silen
 -- split navigation in vim
 vim.api.nvim_set_keymap('n', '<C-Left>', '<C-W><C-H>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-Right>', '<C-W><C-L>', {noremap = true, silent = true})
---vim.api.nvim_set_keymap('n', '<C-Left>', '<C-W><C-H>', {noremap = true, silent = true})
---vim.api.nvim_set_keymap('n', '<C-Right>', '<C-W><C-L>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-Down>', '<C-W><C-J>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-Up>', '<C-W><C-K>', {noremap = true, silent = true})
 -- switch buffers
@@ -49,11 +47,11 @@ vim.api.nvim_set_keymap('n', '<leader>sc', [[<cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap('n', '<C-P>', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
 
 -- vim slime
 vim.api.nvim_set_keymap('n', '<C-c><C-s>', ':SlimeSendCurrentLine<CR>', {silent = true})
