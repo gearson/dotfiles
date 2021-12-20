@@ -58,7 +58,7 @@ vim.cmd [[colorscheme dracula]]
 vim.cmd[[au VimEnter * highlight ColorColumn guibg=#44475a gui=NONE]]
 vim.cmd[[au VimEnter * highlight CursorLineNr guifg=#ff79c6 gui=NONE]]
 
--- airline settings
+-- airline setting
 vim.g["airline_powerline_fonts"] = 0
 vim.g["airline_theme"] = 'dracula'
 vim.g["airline#extensions#whitespace#enabled"] = 0
