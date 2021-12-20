@@ -58,6 +58,7 @@ vim.cmd [[colorscheme dracula]]
 vim.cmd[[au VimEnter * highlight ColorColumn guibg=#44475a gui=NONE]]
 vim.cmd[[au VimEnter * highlight CursorLineNr guifg=#ff79c6 gui=NONE guibg=none]]
 vim.cmd[[au VimEnter * highlight CursorLine guibg=none gui=NONE]]
+vim.cmd[[au VimEnter * highlight TelescopeBorder guifg=#bd93f9]]
 
 -- airline setting
 vim.g["airline_powerline_fonts"] = 0
