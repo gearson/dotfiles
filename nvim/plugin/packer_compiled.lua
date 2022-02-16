@@ -170,6 +170,11 @@ _G.packer_plugins = {
     path = "/home/deniz/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent",
     url = "https://github.com/Vimjas/vim-python-pep8-indent"
   },
+  ["vim-slime"] = {
+    loaded = true,
+    path = "/home/deniz/.local/share/nvim/site/pack/packer/start/vim-slime",
+    url = "https://github.com/jpalardy/vim-slime"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/deniz/.local/share/nvim/site/pack/packer/start/vim-surround",
@@ -187,5 +192,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
