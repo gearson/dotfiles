@@ -75,9 +75,9 @@ function virtualenv_info {
 # disable the default virtualenv prompt change
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-export PATH="/home/deniz/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PATH="/home/deniz/.pyenv/shims$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 
 ####################
@@ -122,3 +122,14 @@ eval "$(pyenv virtualenv-init -)"
 
 # Created by `pipx` on 2021-12-03 23:44:54
 export PATH="$PATH:/home/deniz/.local/bin"
+
+# pyenv path stuff
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+eval "$(pyenv init -)"
