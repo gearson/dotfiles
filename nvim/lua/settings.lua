@@ -32,6 +32,8 @@ o.backup = false
 o.encoding = 'utf-8'
 o.hlsearch = false
 o.cmdheight = 1
+o.splitbelow = true
+o.splitright = true
 
 vim.cmd("autocmd FileType python set colorcolumn=80") 
 
