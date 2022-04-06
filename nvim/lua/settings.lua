@@ -34,6 +34,7 @@ o.hlsearch = false
 o.cmdheight = 1
 o.splitbelow = true
 o.splitright = true
+o.diffopt = "vertical"
 
 vim.cmd("autocmd FileType python set colorcolumn=80") 
 
