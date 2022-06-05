@@ -3,7 +3,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/deniz/.oh-my-zsh"
-export AOC_SESSION=53616c7465645f5f566917a12afa78ced353d875d83ef340bf230d799667dd186f47a19f7732cdfc733a635273be01cf
 
 eval `dircolors ~/dotfiles/.dircolors`
 ZSH_THEME="mytheme"
@@ -14,14 +13,6 @@ SAVEHIST=10000
 setopt appendhistory
 setopt sharehistory      #Share history across terminals
 setopt incappendhistory  #Immediately append to the history file, not just when a term is killed
-
-# this is in mytheme. It's an adjusted robbyrussell
-# PROMPT=' %{$fg[cyan]%}%c $(git_prompt_info)'
-# PROMPT+="%(?:%{$fg[green]%}> :%{$fg[red]%}> )%{$reset_color%}" 
-# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}("
-# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}) %{$fg[red]%}✗"
-# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[red]%})"
 
 
 # Which plugins would you like to load?
@@ -55,11 +46,10 @@ alias dotfiles="cd ~/dotfiles && la"
 alias vimrc="vim ~/dotfiles/nvim/lua/settings.lua"
 alias zshrc="vim ~/dotfiles/.zshrc"
 
-alias cdcode="cd ~/code/ && p"
+alias cdcode="cd ~/code/"
 alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm && tmux rename-window nifti-lstm"
-alias cdaoc="cd ~/code/gearson/advent-of-code && tmux rename-window aoc"
 
-alias p='nvim `fzf --preview="batcat --color always {}"`'
+# alias p='nvim `fzf --preview="batcat --color always {}"`'
 
 alias formatjson="vim ~/Documents/temp.json"
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
@@ -124,10 +114,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PATH="$PATH:/home/deniz/.local/bin"
 
 # pyenv path stuff
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
