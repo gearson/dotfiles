@@ -55,7 +55,6 @@ alias formatjson="vim ~/Documents/temp.json"
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
 current_terminal="$(ps -p$PPID -o cmd=)"
 if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux attach || tmux new; fi
-if [[ $current_terminal =~ 'cool-retro-term' ]]; then tmux attach || tmux new; fi
 if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
 
 # to get a correct prompt when using pyenv
