@@ -42,15 +42,21 @@ return require('packer').startup(function(use)
     use{'voldikss/vim-floaterm'}
     use{'jpalardy/vim-slime'}
     -- language server
-    use {'neoclide/coc.nvim', branch='release'} -- run :CocInstall coc-pyright
+    -- use {'neoclide/coc.nvim', branch='release'} -- run :CocInstall coc-pyright
     use {'nvim-treesitter/nvim-treesitter'}
-    --use {'neovim/nvim-lspconfig'}
-    --use {'hrsh7th/cmp-nvim-lsp'}
-    --use {'hrsh7th/nvim-cmp'}
+    use {'neovim/nvim-lspconfig'}
+    use {'psf/black'}
+    use {'hrsh7th/nvim-cmp'}
+    use {'hrsh7th/cmp-nvim-lsp'}
+    use {'hrsh7th/cmp-buffer'}
+    use {'hrsh7th/cmp-path'}
+    
+    use {'L3MON4D3/LuaSnip'}
+    use {'saadparwaiz1/cmp_luasnip'}
 
     -- telescope
     use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}}
-    use {'fannheyward/telescope-coc.nvim'}
+    -- use {'fannheyward/telescope-coc.nvim'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

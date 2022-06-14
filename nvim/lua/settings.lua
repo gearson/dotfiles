@@ -136,10 +136,10 @@ require('nvim-treesitter.configs').setup {
 
 -- Coc Settiings
 
-vim.cmd("let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-snippets', 'coc-prettier']")
-vim.cmd("source ~/dotfiles/nvim/lua/coc-completion.vim")
--- highlight the symbol and it's references
-vim.cmd("autocmd CursorHold * silent call CocActionAsync('highlight')") 
+-- vim.cmd("let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-snippets', 'coc-prettier']")
+-- vim.cmd("source ~/dotfiles/nvim/lua/coc-completion.vim")
+-- -- highlight the symbol and it's references
+-- vim.cmd("autocmd CursorHold * silent call CocActionAsync('highlight')") 
 
 -- Telescope Settings
 -- Telescope
@@ -153,4 +153,88 @@ require('telescope').setup {
     },
   },
 }
-require('telescope').load_extension('coc')
+-- require('telescope').load_extension('coc')
+
+
+-- lsp confic
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local function lsp_highlight_document(client)
+    -- highlight same symbol
+    if client.resolved_capabilities.document_highlight then
+    vim.api.nvim_exec(
+        [[
+        augroup lsp_document_highlight
+        autocmd! * <buffer>
+        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+        ]],
+        false
+        )
+    end
+end
+
+local opts = {noremap=true, silent=true}
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set("n", " dj", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", " dk", vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
+local on_attach = function(client, bufnr)
+    local bufopts = {noremap=true, silent=true, buffer=bufnr}
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set("n", " dl", "<cmd>Telescope diagnostics<cr>", bufopts)
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
+    vim.keymap.set("n", "<leader>f", "<cmd>Black<cr>", bufopts)
+    lsp_highlight_document(client)
+    end
+
+
+require('lspconfig')['pyright'].setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+vim.opt.completeopt={"menu","menuone","noselect"}
+
+  -- Setup nvim-cmp.
+ local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      end,
+    },
+    window = {
+      -- completion = cmp.config.window.bordered(),
+      -- documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    }),
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' }, -- For luasnip users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- Set configuration for specific filetype.
+  cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+      { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
