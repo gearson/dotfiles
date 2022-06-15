@@ -37,6 +37,7 @@ o.splitright = true
 o.diffopt = "vertical"
 o.laststatus = 3
 
+
 vim.cmd("autocmd FileType python set colorcolumn=80") 
 
 -- highlight on yank
