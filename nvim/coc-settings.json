@@ -11,7 +11,7 @@
   "python.linting.flake8Args": ["--max-line-length=120"],
 
   "suggest.enablePreview": true,
-  "pyright.disableDiagnostics": true,
+  "pyright.disableDiagnostics": false,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
