@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
 
     -- telescope
     use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}}
+    use {'jose-elias-alvarez/null-ls.nvim'}
     -- use {'fannheyward/telescope-coc.nvim'}
 
   -- Automatically set up your configuration after cloning packer.nvim

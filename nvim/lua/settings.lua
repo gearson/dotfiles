@@ -157,7 +157,7 @@ require('telescope').setup {
 
 
 -- lsp confic
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local function lsp_highlight_document(client)
     -- highlight same symbol
@@ -188,9 +188,9 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", " dl", "<cmd>Telescope diagnostics<cr>", bufopts)
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
-    vim.keymap.set("n", "<leader>f", "<cmd>Black<cr>", bufopts)
+    vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting_sync, bufopts)
     lsp_highlight_document(client)
-    end
+end
 
 
 require('lspconfig')['pyright'].setup{
@@ -198,12 +198,12 @@ require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
 }
 
-vim.opt.completeopt={"menu","menuone","noselect"}
 
   -- Setup nvim-cmp.
- local cmp = require'cmp'
+vim.opt.completeopt={"menu","menuone","noselect"}
+local cmp = require'cmp'
 
-  cmp.setup({
+cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
@@ -219,7 +219,7 @@ vim.opt.completeopt={"menu","menuone","noselect"}
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -230,7 +230,7 @@ vim.opt.completeopt={"menu","menuone","noselect"}
   })
 
   -- Set configuration for specific filetype.
-  cmp.setup.filetype('gitcommit', {
+cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
       { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
     }, {
@@ -238,3 +238,15 @@ vim.opt.completeopt={"menu","menuone","noselect"}
     })
   })
 
+local null_ls = require("null-ls")
+
+local sources = {
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.diagnostics.flake8,
+        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.completion.spell,
+}
+
+null_ls.setup({
+    sources = sources
+})
