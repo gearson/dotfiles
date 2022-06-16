@@ -96,7 +96,7 @@ require('nvim-treesitter.configs').setup {
     },
   },
   indent = {
-    enable = true,
+    enable = false,
   },
   textobjects = {
     select = {
@@ -250,3 +250,4 @@ local sources = {
 null_ls.setup({
     sources = sources
 })
+
