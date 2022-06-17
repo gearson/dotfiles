@@ -1,3 +1,5 @@
 require('plugins')
 require('settings')
 require('mappings')
+require('lsp.handlers')
+require('lsp.null-ls')
