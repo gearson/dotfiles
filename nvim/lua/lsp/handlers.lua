@@ -89,7 +89,7 @@ local config = {
     signs = {
       active = signs,
     },
-    update_in_insert = true,
+    update_in_insert = false,  -- change this to true, if you want updates in insert mode
     underline = true,
     severity_sort = true,
     float = {
@@ -124,3 +124,19 @@ vim.fn.sign_define(
   'DiagnosticSignHint',
   { text = '', texthl = 'LspDiagnosticsDefaultHint' }
 )
+
+
+require'lspconfig'.gopls.setup{}
+local lspconfig = require('lspconfig')
+lspconfig.gopls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        gopls = {
+            gofumpt = true,
+        },
+    },
+    flags = {
+        debounce_text_changes = 150,
+    },
+}

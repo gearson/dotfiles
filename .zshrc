@@ -118,3 +118,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
 eval "$(pyenv init -)"
+
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
