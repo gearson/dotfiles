@@ -39,7 +39,7 @@ alias sdenv="source ./.env && set -a && source ./.env && set +a"
 alias vim="nvim"
 alias vpn="tmux rename-window vpn && cd ~/dotfiles/SD-VPN && sudo openvpn ~/dotfiles/SD-VPN/mail_smart_digital_de_VPN1.ovpn"
 
-alias gearsongit="ssh-add -D && ssh-add ~/.ssh/gearson_id_rsa && ssh -T git@github.com"
+# alias gearsongit="ssh-add -D && ssh-add ~/.ssh/gearson_id_rsa && ssh -T git@github.com"
 alias sdgit="ssh-add -D && ssh-add ~/.ssh/sd_id_rsa && ssh -T git@github.com"
 
 alias dotfiles="cd ~/dotfiles && la"
@@ -49,9 +49,9 @@ alias zshrc="vim ~/dotfiles/.zshrc"
 alias cdcode="cd ~/code/"
 alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm && tmux rename-window nifti-lstm"
 
-# alias p='nvim `fzf --preview="batcat --color always {}"`'
+alias p='nvim `fzf --preview="batcat --color always {}"`'
+alias sd="cd ~ && cd \$(find * -type d -path '*/.*' -prune -o -print | fzf)"
 
-alias formatjson="vim ~/Documents/temp.json"
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
 current_terminal="$(ps -p$PPID -o cmd=)"
 if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux attach || tmux new; fi
@@ -64,48 +64,6 @@ function virtualenv_info {
 # disable the default virtualenv prompt change
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# export PATH="/home/deniz/.pyenv/shims$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-
-
-####################
-# Additional Options
-####################
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -119,6 +77,6 @@ eval "$(pyenv init --path)"
 
 eval "$(pyenv init -)"
 
-
+# adding go to path
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
