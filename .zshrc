@@ -50,7 +50,7 @@ alias cdcode="cd ~/code/"
 alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm && tmux rename-window nifti-lstm"
 
 alias p='nvim `fzf --preview="batcat --color always {}"`'
-alias sd="cd ~ && cd \$(find * -type d -path '*/.*' -prune -o -print | fzf)"
+alias sd="cd ~ && cd \$(find * -not -path '*/.*' -type d| fzf)"
 
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
 current_terminal="$(ps -p$PPID -o cmd=)"
