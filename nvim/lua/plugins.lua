@@ -58,6 +58,11 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}}
     use {'jose-elias-alvarez/null-ls.nvim'}
     -- use {'fannheyward/telescope-coc.nvim'}
+    use({ "iamcco/markdown-preview.nvim", 
+        run = "cd app && npm install", 
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, 
+        ft = { "markdown" }, 
+        })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
