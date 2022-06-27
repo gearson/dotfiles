@@ -12,7 +12,7 @@ sudo rm -rf ~/.config/nvim > /dev/null 2>&1
 sudo rm -rf ~/.dircolors > /dev/null 2>&1
 sudo rm -rf ~/dotfiles > /dev/null 2>&1
 sudo rm -rf ~/.oh-my-zsh > /dev/null 2>&1
-
+sudo rm -rf ~/.local/share/fonts > /dev/null 2>&1
 
 #############################################
 # Colors for echo
@@ -139,7 +139,7 @@ echo "Continuing with dotfiles setup!"
 git clone git@github.com:gearson/dotfiles.git $HOME/dotfiles
 
 
-cp $HOME/dotfiles/fonts/Sauce\ Code\ Pro\ Nerd\ Font\ Complete\ Mono.ttf $HOME/.local/share/fonts
+cp $HOME/dotfiles/fonts/Sauce-Code-Pro-Nerd-Font-Complete-Mono.ttf $HOME/.local/share/fonts
 # if you want to install font for all users
 # sudo cp $HOME/dotfiles/fonts/Sauce-Code-Pro-Nerd-Font-Complete-Mono.ttf /usr/local/share/fonts
 

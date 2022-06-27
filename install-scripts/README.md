@@ -33,9 +33,11 @@ A couple of apps need to be configured manually.
     * set right alt to compose key (for these german letters -> äöü)
     * change time formate to AM/PM
     * set Microphone mute/unmute to Numpad *
+    * add flameshot shortcut (command=flameshot gui)
 * Gnome Extensions
     * https://extensions.gnome.org/extension/1720/weeks-start-on-monday-again/
     * https://extensions.gnome.org/extension/10/windownavigator/
     * https://extensions.gnome.org/extension/5135/audio-selector/
 * if you want chrome: https://www.google.com/chrome/?platform=linux
+
 
