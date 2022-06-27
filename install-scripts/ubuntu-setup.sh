@@ -2,6 +2,15 @@
 
 echo "Install Setup Script for Ubuntu"
 
+#############################################
+# delete old dotfiles
+#############################################
+
+sudo rm -rf ~/.zshrc > /dev/null 2>&1
+sudo rm -rf ~/.tmux.conf > /dev/null 2>&1
+sudo rm -rf ~/.config/nvim > /dev/null 2>&1
+sudo rm -rf ~/.dircolors > /dev/null 2>&1
+sudo rm -rf ~/dotfiles > /dev/null 2>&1
 
 
 #############################################
@@ -130,15 +139,6 @@ cp $HOME/dotfiles/fonts/Sauce-Code-Pro-Nerd-Font-Complete-Mono.ttf $HOME/.local/
 # if you want to install font for all users
 # sudo cp $HOME/dotfiles/fonts/Sauce-Code-Pro-Nerd-Font-Complete-Mono.ttf /usr/local/share/fonts
 
-
-#############################################
-# delete old dotfiles
-#############################################
-
-sudo rm -rf ~/.zshrc > /dev/null 2>&1
-sudo rm -rf ~/.tmux.conf > /dev/null 2>&1
-sudo rm -rf ~/.config/nvim > /dev/null 2>&1
-sudo rm -rf ~/.dircolors > /dev/null 2>&1
 
 
 # symlinks
