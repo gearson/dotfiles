@@ -2,6 +2,11 @@
 
 echo "Install Setup Script for Ubuntu"
 
+# Ask for the administrator password upfront and run a
+# keep-alive to update existing `sudo` time stamp until script has finished
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 #############################################
 # delete old dotfiles
 #############################################
@@ -39,42 +44,36 @@ cecho() {
   return
 }
 
-
-# Ask for the administrator password upfront and run a
-# keep-alive to update existing `sudo` time stamp until script has finished
-sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 #############################################
 # Install all packages
 #############################################
 
 cecho "Beginning installation script. Updating system..." $red
-sudo apt update && sudo apt upgrade
-sudo apt install git
+sudo apt update -y && sudo apt upgrade -y
+sudo apt install -y git
 
 # installing brave
 cecho "Installing brave browser..." $red
-sudo apt install apt-transport-https curl
+sudo apt install -y apt-transport-https curl
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
-sudo apt update
+sudo apt update -y
 
-sudo apt install brave-browser
+sudo apt install -y brave-browser
 
 # spotify
 cecho "Installing spotify..." $red
 curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update && sudo apt-get install spotify-client
+sudo apt-get update -y && sudo apt-get install -y spotify-client
 
 # zsh
 cecho "Installing zsh..." $red
 
-sudo apt install zsh
+sudo apt install -y zsh
 #sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
@@ -82,26 +81,27 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # pyenv
-sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev 
+sudo apt-get update -y; sudo apt-get install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev 
 curl https://pyenv.run | bash
 
 # gnome terminal theme
 cecho "Installing gnome-terminal theming..." $red
-sudo apt-get install dconf-cli
+sudo apt-get install -y dconf-cli
 git clone https://github.com/dracula/gnome-terminal $HOME/Downloads/gnome-terminal
 $HOME/Downloads/gnome-terminal/install.sh
 
 # neovim
+sudo apt install -y libfuse2
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage 
 sudo mv nvim.appimage /usr/local/bin/nvim
 
-sudo apt-get install npm
+sudo apt-get install -y npm
 sudo npm i -g pyright
 
 #misc tools
 cecho "Installing some more tools..." $red
-sudo apt install xclip fzf ripgrep tmux flameshot
+sudo apt install -y xclip fzf ripgrep tmux flameshot
 
 #############################################
 ### Generate ssh keys & add to ssh-agent
