@@ -82,10 +82,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # pyenv
 sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev 
 curl https://pyenv.run | bash
+
 # gnome terminal theme
 cecho "Installing gnome-terminal theming..." $red
 sudo apt-get install dconf-cli
-git clone https://github.com/dracula/gnome-terminal $HOME/Downloads
+git clone https://github.com/dracula/gnome-terminal $HOME/Downloads/gnome-terminal
 $HOME/Downloads/gnome-terminal/install.sh
 
 # neovim
