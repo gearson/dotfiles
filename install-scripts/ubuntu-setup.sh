@@ -103,7 +103,7 @@ ssh-keygen -t rsa -b 4096 -C "$useremail"  # will prompt for password
 eval "$(ssh-agent -s)"
 
 echo "$(cat $HOME/.ssh/id_rsa.pub)" | xclip -sel clip
-
+echo "$(cat $HOME/.ssh/id_rsa.pub)" 
 # Set continue to false by default.
 CONTINUE=false
 
