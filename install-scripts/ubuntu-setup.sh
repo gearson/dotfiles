@@ -11,6 +11,7 @@ sudo rm -rf ~/.tmux.conf > /dev/null 2>&1
 sudo rm -rf ~/.config/nvim > /dev/null 2>&1
 sudo rm -rf ~/.dircolors > /dev/null 2>&1
 sudo rm -rf ~/dotfiles > /dev/null 2>&1
+sudo rm -rf ~/.oh-my-zsh > /dev/null 2>&1
 
 
 #############################################
