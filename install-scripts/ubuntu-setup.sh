@@ -138,7 +138,8 @@ echo "Continuing with dotfiles setup!"
 
 git clone git@github.com:gearson/dotfiles.git $HOME/dotfiles
 
-cp $HOME/dotfiles/fonts/Sauce-Code-Pro-Nerd-Font-Complete-Mono.ttf $HOME/.local/share/fonts
+
+cp $HOME/dotfiles/fonts/Sauce\ Code\ Pro\ Nerd\ Font\ Complete\ Mono.ttf $HOME/.local/share/fonts
 # if you want to install font for all users
 # sudo cp $HOME/dotfiles/fonts/Sauce-Code-Pro-Nerd-Font-Complete-Mono.ttf /usr/local/share/fonts
 
