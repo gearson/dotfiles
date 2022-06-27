@@ -7,6 +7,8 @@ vim.api.nvim_set_keymap('n', '<leader>s', ':w<CR>', {noremap = true, silent = fa
 vim.api.nvim_set_keymap('i', '<C-Del>', '<C-o>de', {noremap = true, silent = true})
 -- backspace to delete stuff in normal mode
 vim.api.nvim_set_keymap('n', '<BS>', 'X', {noremap = true, silent = true})
+-- paste last yank (relevant if you dd a line and don't want to paste that one)
+vim.api.nvim_set_keymap('n', '<leader>p', '"0p"', {noremap = true, silent = true})
 
 -- move single lines
 vim.api.nvim_set_keymap('n', '<C-j>', ':m .+1<CR>==', {noremap = true, silent = true})
