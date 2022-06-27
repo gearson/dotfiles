@@ -27,7 +27,7 @@ A couple of apps need to be configured manually.
     * add some treesitter install
         * :TSInstall python
         * :TSInstall json
-        * TSInstall markdown
+        * :TSInstall markdown
 * Gnome
     * change appearance to dark
     * set right alt to compose key (for these german letters -> äöü)
