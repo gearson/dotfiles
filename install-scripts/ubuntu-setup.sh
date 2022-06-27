@@ -41,6 +41,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 cecho "Beginning installation script. Updating system..." $red
 sudo apt update && sudo apt upgrade
+sudo apt install git
 
 # installing brave
 cecho "Installing brave browser..." $red
@@ -134,15 +135,10 @@ cp $HOME/dotfiles/fonts/Sauce-Code-Pro-Nerd-Font-Complete-Mono.ttf $HOME/.local/
 # delete old dotfiles
 #############################################
 
-sudo rm -rf ~/.vim > /dev/null 2>&1
-sudo rm -rf ~/.vimrc > /dev/null 2>&1
-sudo rm -rf ~/.bashrc > /dev/null 2>&1
 sudo rm -rf ~/.zshrc > /dev/null 2>&1
-sudo rm -rf ~/.tmux > /dev/null 2>&1
 sudo rm -rf ~/.tmux.conf > /dev/null 2>&1
 sudo rm -rf ~/.config/nvim > /dev/null 2>&1
 sudo rm -rf ~/.dircolors > /dev/null 2>&1
-sudo rm -rf ~/.oh-my-zsh > /dev/null 2>&1
 
 
 # symlinks
