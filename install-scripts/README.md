@@ -28,7 +28,10 @@ A couple of apps need to be configured manually.
         * :TSInstall python
         * :TSInstall json
         * :TSInstall markdown
+* TMUX
+    * ctrl-a I to initialize plugin installation
 * Gnome
+    * customize dock (remove stuff, reorder etc.)
     * change appearance to dark
     * set right alt to compose key (for these german letters -> äöü)
     * change time formate to AM/PM
@@ -39,5 +42,5 @@ A couple of apps need to be configured manually.
     * https://extensions.gnome.org/extension/10/windownavigator/
     * https://extensions.gnome.org/extension/5135/audio-selector/
 * if you want chrome: https://www.google.com/chrome/?platform=linux
-
+* install teams via deb package from here: https://www.microsoft.com/de-de/microsoft-teams/download-app
 
