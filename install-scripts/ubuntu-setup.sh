@@ -168,6 +168,7 @@ ln -sf $HOME/dotfiles/mytheme.zsh-theme ~/.oh-my-zsh/themes/mytheme.zsh-theme
 ln -sf $HOME/dotfiles/.dircolors ~/.dircolors
 ln -sf $HOME/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf $HOME/dotfiles/nvim ~/.config/nvim
+ln -sf $HOME/dotfiles/.flake8 ~/.flake8
 
 #############################################
 ### Some configs
