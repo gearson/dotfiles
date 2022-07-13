@@ -36,7 +36,8 @@ A couple of apps need to be configured manually.
     * set right alt to compose key (for these german letters -> äöü)
     * change time formate to AM/PM
     * set Microphone mute/unmute to Numpad *
-    * add flameshot shortcut (command=flameshot gui)
+    * add flameshot shortcut (command=flameshot gui), super+shift+s
+    * add bluetooth shortcut (command=gnome-control-center bluetooth), super+shift+b
 * Gnome Extensions
     * https://extensions.gnome.org/extension/1720/weeks-start-on-monday-again/
     * https://extensions.gnome.org/extension/10/windownavigator/
