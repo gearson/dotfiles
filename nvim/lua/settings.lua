@@ -133,7 +133,11 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
-
+require("treesitter-context").setup({
+    enable=true,
+    throttle = true,
+    max_lines = 0,
+})
 -- Coc Settiings
 
 -- vim.cmd("let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-snippets', 'coc-prettier']")
