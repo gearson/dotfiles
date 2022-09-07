@@ -1,3 +1,11 @@
+# check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
+# current_terminal="$(ps -p$PPID -o cmd=)"
+# if [[ $current_terminal =~ 'gnome-terminal' -a  "$TMUX" = "" ]]; then tmux attach || tmux new; fi
+if [ -z $TMUX ]; then tmux; fi
+
+# fixes some color stuff
+if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -53,10 +61,6 @@ alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm && tmux rename-window nifti-lstm
 alias p='nvim `fzf --preview="batcat --color always {}"`'
 alias sd="cd ~ && cd \$(find * -not -path '*/.*' -type d| fzf)"
 
-# check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
-current_terminal="$(ps -p$PPID -o cmd=)"
-if [[ $current_terminal =~ 'gnome-terminal' ]]; then tmux attach || tmux new; fi
-if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
 
 # to get a correct prompt when using pyenv
 function virtualenv_info { 
