@@ -41,12 +41,13 @@ return require('packer').startup(function(use)
     use{'tpope/vim-fugitive'}
     use{'voldikss/vim-floaterm'}
     use{'jpalardy/vim-slime'}
+    
     -- language server
     -- use {'neoclide/coc.nvim', branch='release'} -- run :CocInstall coc-pyright
     use {'nvim-treesitter/nvim-treesitter'}
     use {'nvim-treesitter/nvim-treesitter-context'}
-    use {'neovim/nvim-lspconfig'}
     use {'psf/black'}
+    use {'neovim/nvim-lspconfig'}
     use {'hrsh7th/nvim-cmp'}
     use {'hrsh7th/cmp-nvim-lsp'}
     use {'hrsh7th/cmp-buffer'}
