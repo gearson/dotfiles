@@ -158,3 +158,14 @@ require("telescope").setup({
 	},
 })
 -- require('telescope').load_extension('coc')
+
+-- mason
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})

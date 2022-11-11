@@ -19,6 +19,7 @@ return require("packer").startup(function(use)
 	use({ "wbthomason/packer.nvim" })
 	-- themes
 	use({ "dracula/vim", as = "dracula" }) -- theme
+    use({"williamboman/mason.nvim" })
 	--nerdtree stuff
 	use({ "scrooloose/nerdtree" })
 	use({
@@ -41,6 +42,7 @@ return require("packer").startup(function(use)
 	use({ "Vimjas/vim-python-pep8-indent" })
 
 	use({ "tpope/vim-fugitive" })
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
 	use({ "voldikss/vim-floaterm" })
 	use({ "jpalardy/vim-slime" })
 
@@ -70,7 +72,7 @@ return require("packer").startup(function(use)
 		end,
 		ft = { "markdown" },
 	})
-
+    use {"ellisonleao/glow.nvim"}
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
