@@ -150,6 +150,11 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
 			url = "https://github.com/iamcco/markdown-preview.nvim",
 		},
+		["mason-lspconfig.nvim"] = {
+			loaded = true,
+			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+			url = "https://github.com/williamboman/mason-lspconfig.nvim",
+		},
 		["mason.nvim"] = {
 			loaded = true,
 			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/mason.nvim",

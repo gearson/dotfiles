@@ -66,12 +66,14 @@ vim.cmd([[au VimEnter * highlight TelescopeBorder guifg=#bd93f9]])
 vim.cmd([[au VimEnter * highlight WinSeparator guifg=#bd93f9 guibg=None]])
 
 -- airline setting
+vim.g.python3_host_prog = "/home/adm_dohmen/.pyenv/versions/py3nvim/bin/python"
 vim.g["airline_powerline_fonts"] = 0
 vim.g["airline_theme"] = "dracula"
 vim.g["airline#extensions#whitespace#enabled"] = 0
 vim.g["airline#extensions#tabline#enabled"] = 1
 vim.g["airline#extensions#tabline#buffer_nr_show"] = 0
 vim.g["airline#extensions#tabline#fnamemod"] = ":t"
+vim.g["airline#extensions#virtualenv#enabled"] = 1
 vim.g["airline_powerline_fonts"] = 1
 
 -- vim-slime settings

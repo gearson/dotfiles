@@ -19,7 +19,6 @@ return require("packer").startup(function(use)
 	use({ "wbthomason/packer.nvim" })
 	-- themes
 	use({ "dracula/vim", as = "dracula" }) -- theme
-	use({ "williamboman/mason.nvim" })
 	--nerdtree stuff
 	use({ "scrooloose/nerdtree" })
 	use({
@@ -31,6 +30,8 @@ return require("packer").startup(function(use)
 	-- airline
 	use({ "vim-airline/vim-airline" })
 	use({ "vim-airline/vim-airline-themes" })
+	use({ "vim-airline/vim-airline-themes" })
+	use({ "jmcantrell/vim-virtualenv" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "ryanoasis/vim-devicons" })
 	-- parentheses and stuff
@@ -51,6 +52,8 @@ return require("packer").startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "nvim-treesitter/nvim-treesitter-context" })
 	use({ "psf/black" })
+	use({ "williamboman/mason.nvim" })
+	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "neovim/nvim-lspconfig" })
 	use({ "hrsh7th/nvim-cmp" })
 	use({ "hrsh7th/cmp-nvim-lsp" })
