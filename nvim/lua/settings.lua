@@ -159,7 +159,7 @@ require("telescope").setup({
 		},
 	},
 })
--- require('telescope').load_extension('coc')
+require("telescope").load_extension("file_browser")
 
 -- mason
 require("mason").setup({
@@ -171,3 +171,5 @@ require("mason").setup({
 		},
 	},
 })
+
+require("todo-comments").setup()

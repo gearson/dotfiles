@@ -27,9 +27,9 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
+	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 	-- airline
 	use({ "vim-airline/vim-airline" })
-	use({ "vim-airline/vim-airline-themes" })
 	use({ "vim-airline/vim-airline-themes" })
 	use({ "jmcantrell/vim-virtualenv" })
 	use({ "kyazdani42/nvim-web-devicons" })
@@ -38,8 +38,8 @@ return require("packer").startup(function(use)
 	use({ "jiangmiao/auto-pairs" })
 	use({ "alvan/vim-closetag" })
 	use({ "tpope/vim-surround" })
-	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "mechatroner/rainbow_csv" })
+	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "Vimjas/vim-python-pep8-indent" })
 
 	use({ "tpope/vim-fugitive" })
@@ -49,7 +49,6 @@ return require("packer").startup(function(use)
 	use({ "jpalardy/vim-slime" })
 
 	-- language server
-	-- use {'neoclide/coc.nvim', branch='release'} -- run :CocInstall coc-pyright
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "nvim-treesitter/nvim-treesitter-context" })
 	use({ "psf/black" })
@@ -60,14 +59,14 @@ return require("packer").startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-buffer" })
 	use({ "hrsh7th/cmp-path" })
-
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "saadparwaiz1/cmp_luasnip" })
-
+	use({ "jose-elias-alvarez/null-ls.nvim" })
 	-- telescope
 	use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
-	use({ "jose-elias-alvarez/null-ls.nvim" })
-	-- use {'fannheyward/telescope-coc.nvim'}
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
+
+	-- misc
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",

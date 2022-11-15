@@ -93,6 +93,12 @@ vim.api.nvim_set_keymap(
 	[[<cmd>lua require('telescope.builtin').help_tags()<CR>]],
 	{ noremap = true, silent = true }
 )
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>gs",
+	[[<cmd>lua require('telescope.builtin').git_status()<CR>]],
+	{ noremap = true, silent = true }
+)
 
 -- diagnostics mappings
 local opts = { noremap = true, silent = true }
