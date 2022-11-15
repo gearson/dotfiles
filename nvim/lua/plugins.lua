@@ -44,6 +44,7 @@ return require("packer").startup(function(use)
 
 	use({ "tpope/vim-fugitive" })
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({ "mhinz/vim-signify" })
 	use({ "voldikss/vim-floaterm" })
 	use({ "jpalardy/vim-slime" })
 
@@ -76,6 +77,7 @@ return require("packer").startup(function(use)
 		ft = { "markdown" },
 	})
 	use({ "ellisonleao/glow.nvim" })
+	use({ "mbbill/undotree" })
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

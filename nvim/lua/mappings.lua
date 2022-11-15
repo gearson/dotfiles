@@ -93,11 +93,8 @@ vim.api.nvim_set_keymap(
 	[[<cmd>lua require('telescope.builtin').help_tags()<CR>]],
 	{ noremap = true, silent = true }
 )
--- vim.api.nvim_set_keymap('n', '<leader>se', [[<cmd>lua require('telescope.builtin').file_browser({hidden = true})<CR>]], { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
--- diagnostics mappings
 
+-- diagnostics mappings
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<space>d", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)

@@ -215,6 +215,11 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/telescope.nvim",
 			url = "https://github.com/nvim-telescope/telescope.nvim",
 		},
+		undotree = {
+			loaded = true,
+			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/undotree",
+			url = "https://github.com/mbbill/undotree",
+		},
 		["vim-airline"] = {
 			loaded = true,
 			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/vim-airline",
@@ -250,6 +255,11 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent",
 			url = "https://github.com/Vimjas/vim-python-pep8-indent",
 		},
+		["vim-signify"] = {
+			loaded = true,
+			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/vim-signify",
+			url = "https://github.com/mhinz/vim-signify",
+		},
 		["vim-slime"] = {
 			loaded = true,
 			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/vim-slime",
@@ -259,6 +269,11 @@ local no_errors, error_msg = pcall(function()
 			loaded = true,
 			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/vim-surround",
 			url = "https://github.com/tpope/vim-surround",
+		},
+		["vim-virtualenv"] = {
+			loaded = true,
+			path = "/home/adm_dohmen/.local/share/nvim/site/pack/packer/start/vim-virtualenv",
+			url = "https://github.com/jmcantrell/vim-virtualenv",
 		},
 	}
 
