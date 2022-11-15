@@ -43,6 +43,7 @@ require("lspconfig")["pyright"].setup({
 -- Setup nvim-cmp.
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 cmp.setup({
 	snippet = {
@@ -63,11 +64,27 @@ cmp.setup({
 		["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	}),
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
+		{
+			name = "nvim_lsp",
+			-- -- don't suggest text from nvim_lsp
+			-- entry_filter = function(entry, ctx)
+			-- 	return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+			-- end,
+		},
+		{ name = "path" },
 		{ name = "luasnip" }, -- For luasnip users.
-	}, {
-		{ name = "buffer" },
+		{ name = "buffer", keyword_length = 5 },
 	}),
+	formatting = {
+		format = lspkind.cmp_format({
+			with_text = true,
+			menu = {
+				nvim_lsp = "[LSP]",
+				path = "[path]",
+				buffer = "[buf]",
+			},
+		}),
+	},
 })
 
 -- Set configuration for specific filetype.

@@ -62,6 +62,7 @@ return require("packer").startup(function(use)
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "saadparwaiz1/cmp_luasnip" })
 	use({ "jose-elias-alvarez/null-ls.nvim" })
+	use({ "onsails/lspkind.nvim" })
 	-- telescope
 	use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "nvim-telescope/telescope-file-browser.nvim" })
