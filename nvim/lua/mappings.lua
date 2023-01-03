@@ -71,6 +71,12 @@ vim.api.nvim_set_keymap(
 ) -- grep on word under cursor!
 vim.api.nvim_set_keymap(
 	"n",
+	"<leader>lg",
+	[[<cmd>lua require('telescope.builtin').live_grep()<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
 	"<leader>sp",
 	[[<cmd>lua require('telescope.builtin').live_grep()<CR>]],
 	{ noremap = true, silent = true }
@@ -78,6 +84,12 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>sb",
+	[[<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt=top<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<C-F>",
 	[[<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt=top<CR>]],
 	{ noremap = true, silent = true }
 )
@@ -106,6 +118,7 @@ vim.keymap.set("n", "<space>d", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
+vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 
 -- vim slime
 vim.api.nvim_set_keymap("n", "<C-c><C-s>", ":SlimeSendCurrentLine<CR>", { silent = true })

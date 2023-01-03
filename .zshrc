@@ -48,7 +48,7 @@ alias vim="nvim"
 alias vpn="tmux rename-window vpn && cd ~/dotfiles/SD-VPN && sudo openvpn ~/dotfiles/SD-VPN/mail_smart_digital_de_VPN1.ovpn"
 alias active="ae playground && python ~/code/personal/playground/active.py"
 
-alias gearsongit="ssh-add -D && ssh-add ~/.ssh/gearson_id_rsa && ssh -T git@github.com"
+# alias gearsongit="ssh-add -D && ssh-add ~/.ssh/gearson_id_rsa && ssh -T git@github.com"
 # alias sdgit="ssh-add -D && ssh-add ~/.ssh/sd_id_rsa && ssh -T git@github.com"
 
 alias dotfiles="cd ~/dotfiles && la"
@@ -59,7 +59,7 @@ alias cdcode="cd ~/code/"
 alias sdcode="cd ~/code/sd/ && tmux rename-window sd"
 alias personalcode="cd ~/code/personal/"
 
-alias cd-nifti-lstm="cd ~/code/sd/ds-nifti-lstm && tmux rename-window nifti-lstm"
+alias cdnifti="cd ~/code/sd/ds-nifti-lstm && tmux rename-window nifti-lstm"
 
 alias p='nvim `fzf --preview="batcat --color always {}"`'
 alias sd="cd ~ && cd \$(find * -not -path '*/.*' -type d| fzf)"
