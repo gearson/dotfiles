@@ -1,6 +1,21 @@
+-- mason
+
+require("mason").setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+	},
+})
+
+require("mason-lspconfig").setup()
+
 -- lsp config
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local function lsp_highlight_document(client)
 	-- highlight same symbol
@@ -26,11 +41,14 @@ local on_attach = function(client, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-	-- vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+	vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, bufopts)
 	vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", bufopts)
-	vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
-	vim.keymap.set("n", "<f2>", vim.lsp.buf.rename, bufopts)
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+	-- vim.keymap.set("n", "<f2>", vim.lsp.buf.rename, bufopts)
 	vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, bufopts)
+	vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
+	vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols, bufopts)
+	vim.keymap.set("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, bufopts)
 	lsp_highlight_document(client)
 end
 
@@ -72,7 +90,7 @@ cmp.setup({
 		},
 		{ name = "path" },
 		{ name = "luasnip" }, -- For luasnip users.
-		{ name = "buffer", keyword_length = 5 },
+		{ name = "buffer", keyword_length = 4 }, -- for autocomplete based on current buffer
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
