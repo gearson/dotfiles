@@ -29,6 +29,7 @@ return require("lazy").setup({
 			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
 		end,
 	},
+	"nvim-treesitter/playground",
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" } },
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
@@ -61,7 +62,6 @@ return require("lazy").setup({
 	"Vimjas/vim-python-pep8-indent",
 	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 	"mhinz/vim-signify",
-	"jpalardy/vim-slime",
 
 	-- language server
 	-- "nvim-treesitter/nvim-treesitter",
@@ -101,7 +101,8 @@ return require("lazy").setup({
 	"mfussenegger/nvim-dap-python",
 	-- misc
 	"tpope/vim-fugitive",
-	"scrooloose/nerdtree",
+	-- "scrooloose/nerdtree",
 	"ellisonleao/glow.nvim",
 	"mbbill/undotree",
+	"jpalardy/vim-slime",
 })

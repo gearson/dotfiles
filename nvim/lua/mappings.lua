@@ -1,3 +1,8 @@
+-- unmap space in v & n
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+-- Remap for dealing with word wrap
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 -- close current buffer
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { noremap = true, silent = false })
 -- save current buffer
@@ -54,7 +59,12 @@ vim.keymap.set("n", "<leader>sp", require("telescope.builtin").live_grep, { desc
 vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
 vim.keymap.set("n", "<leader>gs", require("telescope.builtin").git_status, { desc = "[G]it [S]tatus" })
 vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
-vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
+vim.keymap.set(
+	"n",
+	"<leader>so",
+	require("telescope.builtin").oldfiles,
+	{ remap = true, desc = "[S]earch [O]ld files" }
+)
 
 vim.keymap.set(
 	"n",
@@ -72,7 +82,9 @@ vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { desc = "Open diagno
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "LspSaga hover doc" })
 
 -- NERDtree
-vim.keymap.set("n", "<C-b>", ":NERDTreeToggle<CR>", { silent = true })
+
+vim.keymap.set("n", "<C-b>", "<cmd>Telescope file_browser<CR>", { desc = "Telescope file browser" })
+-- vim.keymap.set("n", "<C-b>", ":NERDTreeToggle<CR>", { silent = true })
 
 -- undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
