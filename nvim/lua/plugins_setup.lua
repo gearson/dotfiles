@@ -76,8 +76,8 @@ return require("lazy").setup({
 	"L3MON4D3/LuaSnip",
 	"saadparwaiz1/cmp_luasnip",
 	"jose-elias-alvarez/null-ls.nvim",
-	"onsails/lspkind.nvim",
-	"psf/black",
+	"onsails/lspkind.nvim",  -- adds vscode-like pictograms to neovim built-in lsp
+	-- "psf/black",
 	{
 		"glepnir/lspsaga.nvim",
 		event = "BufRead",

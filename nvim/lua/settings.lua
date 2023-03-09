@@ -57,6 +57,7 @@ opt.timeoutlen = 300
 opt.completeopt = "menuone,noselect"
 
 opt.termguicolors = true
+vim.g.netrw_fastbrowse = 0
 
 -- highlight on yank
 vim.api.nvim_exec(
@@ -70,6 +71,8 @@ vim.api.nvim_exec(
 )
 
 --Set colorscheme (order is important here)
+
+
 opt.background = "dark"
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR=1")
 

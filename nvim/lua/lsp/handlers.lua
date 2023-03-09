@@ -39,12 +39,11 @@ end
 
 local on_attach = function(client, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+	-- vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 	vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, bufopts)
 	vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", bufopts)
-	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
-	-- vim.keymap.set("n", "<f2>", vim.lsp.buf.rename, bufopts)
+	vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 	vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, bufopts)
 	vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
 	vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols, bufopts)
@@ -148,6 +147,7 @@ vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "LspDiagnostic
 
 vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "LspDiagnosticsDefaultHint" })
 
+-- go specific setup
 require("lspconfig").gopls.setup({})
 local lspconfig = require("lspconfig")
 lspconfig.gopls.setup({
