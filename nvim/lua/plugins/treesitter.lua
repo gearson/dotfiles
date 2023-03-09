@@ -67,10 +67,3 @@ require("treesitter-context").setup({
 	throttle = true,
 	max_lines = 0,
 })
-
--- some python specific custom highlights
-vim.api.nvim_set_hl(0, '@parameter.python', { fg='#ffb86c'})
-vim.api.nvim_set_hl(0, '@field.python', { fg='#ffb86c'})
-vim.api.nvim_set_hl(0, '@function.builtin.python', { fg='#8BE9FD'})
-vim.api.nvim_set_hl(0, '@constructor.python', { fg='#8BE9FD'})
-vim.api.nvim_set_hl(0, '@constant.builtin.python', { fg='#BD93F9'})

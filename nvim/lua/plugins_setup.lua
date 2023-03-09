@@ -19,6 +19,7 @@ return require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 	},
+    { "catppuccin/nvim", name = "catppuccin" },
 	-- Highlight, edit, and navigate code
 	{
 		"nvim-treesitter/nvim-treesitter",

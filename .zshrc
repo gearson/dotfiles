@@ -1,10 +1,9 @@
 # check which terminal is used and run tmux. This is to avoid tmux in the integrated terminal of vscode.
 # current_terminal="$(ps -p$PPID -o cmd=)"
-# if [[ $current_terminal =~ 'gnome-terminal' -a  "$TMUX" = "" ]]; then tmux attach || tmux new; fi
 if [ -z $TMUX ]; then tmux; fi
 
 # fixes some color stuff
-if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
+# if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -14,7 +13,6 @@ export ZSH=$HOME/.oh-my-zsh
 
 eval `dircolors ~/dotfiles/.dircolors`
 ZSH_THEME="mytheme"
-#export TERM=xterm-256color
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
