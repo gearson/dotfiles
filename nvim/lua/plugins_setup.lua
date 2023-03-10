@@ -51,7 +51,6 @@ return require("lazy").setup({
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	"jmcantrell/vim-virtualenv",
 	"nvim-tree/nvim-web-devicons",
 	"ryanoasis/vim-devicons",
 	-- parentheses and stuff
