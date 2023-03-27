@@ -51,7 +51,7 @@ opt.laststatus = 3
 -- Decrease update time
 opt.updatetime = 250
 opt.timeout = true
-opt.timeoutlen = 300
+opt.timeoutlen = 500
 
 -- Set completeopt to have a better completion experience
 opt.completeopt = "menuone,noselect"
