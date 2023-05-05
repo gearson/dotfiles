@@ -54,6 +54,21 @@ end
 require("lspconfig")["pyright"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+    settings = {
+            python = {
+                autoImportCompletion = true,
+             analysis = {
+                    typeCheckingMode="off",
+                    useLibraryCodeForTypes=true, 
+                    diagnosticMode="openFilesOnly", 
+                    autoSeachPaths = true,
+                    diagnosticSeverityOverrides = {
+                    reportGeneralTypeIssues="none",
+                    reportOptionalIterable="none",
+                    }
+                }
+            }
+    }
 })
 
 -- Setup nvim-cmp.
