@@ -62,7 +62,8 @@ alias cdnifti="cd ~/code/sd/ds-nifti-lstm && tmux rename-window nifti-lstm"
 alias p='nvim `fzf --preview="batcat --color always {}"`'
 alias sd="cd ~ && cd \$(find * -not -path '*/.*' -type d| fzf)"
 
-
+alias gearsongit="ssh-add -D && ssh-add ~/.ssh/id_rsa && ssh -T git@github.com"
+alias sdgit="ssh-add -D && ssh-add ~/.ssh/sd_rsa && ssh -T git@github.com"
 # to get a correct prompt when using pyenv
 function virtualenv_info { 
 [ $VIRTUAL_ENV ] && echo ‘(‘`basename $VIRTUAL_ENV`’) ‘ 
