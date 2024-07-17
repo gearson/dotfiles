@@ -73,8 +73,6 @@ return require("lazy").setup({
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",
-	"L3MON4D3/LuaSnip",
-	"saadparwaiz1/cmp_luasnip",
 	"jose-elias-alvarez/null-ls.nvim",
 	"onsails/lspkind.nvim",  -- adds vscode-like pictograms to neovim built-in lsp
 	-- "psf/black",

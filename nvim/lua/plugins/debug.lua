@@ -16,7 +16,7 @@ require("mason-nvim-dap").setup({
 
 -- You can provide additional configuration to the handlers,
 -- see mason-nvim-dap README for more information
-require("mason-nvim-dap").setup_handlers()
+require("mason-nvim-dap").setup()
 require("dap-python").setup("~/.pyenv/versions/debugpy/bin/python")
 -- Basic debugging keymaps, feel free to change to your liking!
 vim.keymap.set("n", "<F5>", dap.continue)
