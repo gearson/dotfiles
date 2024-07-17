@@ -9,6 +9,7 @@ vim.keymap.set("n", "<leader>q", ":bd<CR>", { noremap = true, silent = false })
 vim.keymap.set("n", "<leader>s", ":w<CR>", { noremap = true, silent = false })
 -- makes ctrl-DEL behave like everywhere else. Deletes word forward
 vim.keymap.set("i", "<C-Del>", "<C-o>de", { noremap = true, silent = true })
+vim.keymap.set("i", "<M-BS>", "<C-o>caw", { noremap = true, silent = true })
 -- backspace to delete stuff in normal mode
 vim.keymap.set("n", "<BS>", "X", { noremap = true, silent = true })
 -- paste last yank (relevant if you dd a line and don't want to paste that one)
