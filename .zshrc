@@ -45,6 +45,7 @@ alias sdenv="source ./.env && set -a && source ./.env && set +a"
 alias vim="nvim"
 alias vpn="tmux rename-window vpn && cd ~/dotfiles/SD-VPN && sudo openvpn ~/dotfiles/SD-VPN/mail_smart_digital_de_VPN1.ovpn"
 alias active="ae playground && python ~/code/personal/playground/active.py"
+alias pag-aws="aws sso login --profile pag-aws"
 
 # alias gearsongit="ssh-add -D && ssh-add ~/.ssh/gearson_id_rsa && ssh -T git@github.com"
 # alias sdgit="ssh-add -D && ssh-add ~/.ssh/sd_id_rsa && ssh -T git@github.com"
