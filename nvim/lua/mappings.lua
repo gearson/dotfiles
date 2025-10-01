@@ -100,3 +100,7 @@ vim.keymap.set("n", "<C-c><C-s>", ":SlimeSendCurrentLine<CR>", { silent = true }
 -- comment.nvim remap to ctrl+/
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true })
+
+-- save session
+vim.keymap.set("n", "<leader>ss", ":mksession! ~/.config/nvim_sessions/mysession.vim<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>sl", ":source ~/.config/nvim_sessions/mysession.vim<CR>", { noremap = true, silent = true })
