@@ -70,4 +70,4 @@ vim.api.nvim_exec(
 	false
 )
 
-vim.g.python3_host_prog = "/home/adm_dohmen/.pyenv/versions/py3nvim/bin/python"
+vim.g.python3_host_prog = os.getenv("HOME") .. "/.pyenv/versions/py3nvim/bin/python"
